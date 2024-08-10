@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator anim;
 
     [SerializeField] private float moveSpeed;
 
@@ -13,13 +14,21 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
         xInput = Input.GetAxisRaw("Horizontal");
+        HandleAnimation();
 
         HandleMovement();
+    }
+
+    private void HandleAnimation()
+    {
+        bool isRunning = rb.velocity.x != 0;
+        anim.SetBool("isRunning", isRunning);
     }
 
     private void HandleMovement()
