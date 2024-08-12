@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,17 +27,25 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        xInput = Input.GetAxisRaw("Horizontal");
+        HandleCollision();
+        HandleInput();
+        HandleMovement();
+        HandleAnimation();
+    }
 
-        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
+    private void HandleInput()
+    {
+        xInput = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
+    }
 
-        HandleAnimation();
-        HandleMovement();
+    private void HandleCollision()
+    {
+        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
     }
 
     private void HandleAnimation()
