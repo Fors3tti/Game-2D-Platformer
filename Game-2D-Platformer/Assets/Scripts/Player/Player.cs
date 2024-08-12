@@ -27,8 +27,7 @@ public class Player : MonoBehaviour
 
     private void HandleAnimation()
     {
-        bool isRunning = rb.velocity.x != 0;
-        anim.SetBool("isRunning", isRunning);
+        anim.SetFloat("xVelocity", rb.velocity.x);
     }
 
     private void HandleMovement()
