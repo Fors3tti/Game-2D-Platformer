@@ -51,6 +51,8 @@ public class Player : MonoBehaviour
     private void HandleAnimation()
     {
         anim.SetFloat("xVelocity", rb.velocity.x);
+        anim.SetFloat("yVelocity", rb.velocity.y);
+        anim.SetBool("isGrounded", isGrounded);
     }
 
     private void HandleMovement()
