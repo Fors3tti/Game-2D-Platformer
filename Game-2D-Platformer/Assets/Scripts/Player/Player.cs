@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
 
     private float xInput;
 
+    private bool facingRight = true;
+    private int facingDir = 1;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,6 +33,7 @@ public class Player : MonoBehaviour
         HandleCollision();
         HandleInput();
         HandleMovement();
+        HandleFlip();
         HandleAnimation();
     }
 
@@ -58,6 +62,21 @@ public class Player : MonoBehaviour
     private void HandleMovement()
     {
         rb.velocity = new Vector2(xInput * moveSpeed, rb.velocity.y);
+    }
+
+    private void HandleFlip()
+    {
+        if(rb.velocity.x < 0 && facingRight || rb.velocity.x > 0 && !facingRight)
+        {
+            Flip();
+        }
+    }
+
+    private void Flip()
+    {
+        facingDir = facingDir * -1;
+        transform.Rotate(0, 180, 0);
+        facingRight = !facingRight;
     }
 
     private void OnDrawGizmos()
