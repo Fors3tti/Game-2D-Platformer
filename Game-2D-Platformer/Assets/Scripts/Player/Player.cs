@@ -17,9 +17,11 @@ public class Player : MonoBehaviour
 
     [Header("Collision Info")]
     [SerializeField] private float groundCheckDistance;
+    [SerializeField] private float wallCheckDistance;
     [SerializeField] private LayerMask whatIsGround;
     private bool isGrounded;
     private bool isAirbone;
+    private bool isWallDetected;
 
     private float xInput;
 
@@ -38,9 +40,18 @@ public class Player : MonoBehaviour
 
         HandleCollision();
         HandleInput();
+        HandleWallSlide();
         HandleMovement();
         HandleFlip();
         HandleAnimation();
+    }
+
+    private void HandleWallSlide()
+    {
+        if(isWallDetected && rb.velocity.y < 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
+        }
     }
 
     private void UpdateAirboneStatus()
@@ -95,7 +106,10 @@ public class Player : MonoBehaviour
 
     private void HandleCollision()
     {
-        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
+        isGrounded = Physics2D.Raycast(transform.position, 
+            Vector2.down, groundCheckDistance, whatIsGround);
+        isWallDetected = Physics2D.Raycast(transform.position, 
+            Vector2.right * facingDir, wallCheckDistance, whatIsGround);
     }
 
     private void HandleAnimation()
@@ -103,16 +117,20 @@ public class Player : MonoBehaviour
         anim.SetFloat("xVelocity", rb.velocity.x);
         anim.SetFloat("yVelocity", rb.velocity.y);
         anim.SetBool("isGrounded", isGrounded);
+        anim.SetBool("isWallDetected", isWallDetected);
     }
 
     private void HandleMovement()
     {
+        if (isWallDetected)
+            return;
+
         rb.velocity = new Vector2(xInput * moveSpeed, rb.velocity.y);
     }
 
     private void HandleFlip()
     {
-        if(rb.velocity.x < 0 && facingRight || rb.velocity.x > 0 && !facingRight)
+        if(xInput < 0 && facingRight || xInput > 0 && !facingRight)
         {
             Flip();
         }
@@ -129,5 +147,7 @@ public class Player : MonoBehaviour
     {
         Gizmos.DrawLine(transform.position,
             new Vector2(transform.position.x, transform.position.y - groundCheckDistance));
+        Gizmos.DrawLine(transform.position,
+            new Vector2(transform.position.x + (wallCheckDistance * facingDir), transform.position.y));
     }
 }

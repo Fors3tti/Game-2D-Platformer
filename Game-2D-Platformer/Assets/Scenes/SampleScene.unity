@@ -280,8 +280,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.023869455, y: -0.010229826}
-  m_Size: {x: 1.1888071, y: 1.4684219}
+  m_Offset: {x: 0.033700466, y: -0.004382491}
+  m_Size: {x: 1.1003294, y: 1.4567273}
   m_Direction: 0
 --- !u!50 &611226028
 Rigidbody2D:
@@ -326,6 +326,7 @@ MonoBehaviour:
   jumpForce: 14
   doubleJumpForce: 10
   groundCheckDistance: 0.8
+  wallCheckDistance: 0.65
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
