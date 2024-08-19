@@ -239,7 +239,7 @@ Transform:
   m_GameObject: {fileID: 611226025}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.37, y: -0.36, z: 0}
+  m_LocalPosition: {x: 0.03, y: 2.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -325,6 +325,8 @@ MonoBehaviour:
   moveSpeed: 10
   jumpForce: 14
   doubleJumpForce: 10
+  wallJumpDuration: 0.5
+  wallJumpForce: {x: 8, y: 16}
   groundCheckDistance: 0.8
   wallCheckDistance: 0.65
   whatIsGround:
@@ -457,7 +459,7 @@ Transform:
   m_GameObject: {fileID: 1380048353}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.45, y: -0.05, z: 0}
+  m_LocalPosition: {x: -6.45, y: -2.59, z: 0}
   m_LocalScale: {x: -4.9899817, y: 2.360414, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -590,7 +592,7 @@ Transform:
   m_GameObject: {fileID: 1524518916}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.19, y: 1.42, z: 0}
+  m_LocalPosition: {x: -1.19, y: -1.12, z: 0}
   m_LocalScale: {x: -7.5473475, y: 5.369942, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -723,7 +725,7 @@ Transform:
   m_GameObject: {fileID: 1795770837}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalPosition: {x: 0, y: -4.04, z: 0}
   m_LocalScale: {x: 26.613235, y: 0.77390623, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -965,7 +967,7 @@ Transform:
   m_GameObject: {fileID: 2018916185}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.92, y: 1.87, z: 0}
+  m_LocalPosition: {x: 10.92, y: -0.66999996, z: 0}
   m_LocalScale: {x: -4.717092, y: 7.051737, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
