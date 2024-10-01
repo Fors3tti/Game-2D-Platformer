@@ -8,11 +8,15 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
-    [Header("Movement info")]
+    [Header("Movement Info")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float doubleJumpForce;
     private bool canDoubleJump;
+
+    [Header("Buffer Jump")]
+    [SerializeField] private float bufferJumpWindow = .25f;
+    private float bufferJumpActivated = -1;
 
     [Header("Wall Info")]
     [SerializeField] private float wallJumpDuration = .6f;
@@ -102,6 +106,8 @@ public class Player : MonoBehaviour
     {
         isAirbone = false;
         canDoubleJump = true;
+
+        AttemptBufferJump();
     }
 
     private void HandleInput()
@@ -112,6 +118,22 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             JumpButton();
+            RequestBufferJump();
+        }
+    }
+
+    private void RequestBufferJump()
+    {
+        if (isAirbone)
+            bufferJumpActivated = Time.time;
+    }
+
+    private void AttemptBufferJump()
+    {
+        if(Time.time < bufferJumpActivated + bufferJumpWindow)
+        {
+            bufferJumpActivated = 0;
+            Jump();
         }
     }
 
