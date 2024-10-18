@@ -16,6 +16,16 @@ public class Fruit : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.instance;
+        SetRandomLookIfNeeded();
+    }
+
+    private void SetRandomLookIfNeeded()
+    {
+        if (gameManager.FruitsHaveRandomLook() == false)
+            return;
+
+        int randomIndex = Random.Range(1, 9);
+        anim.SetFloat("fruitIndex", randomIndex);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
