@@ -192,3 +192,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruitType: 0
+  pickupVfx: {fileID: 3952338929686920926, guid: a494723706d958a47bf469b6d9440dd7, type: 3}
