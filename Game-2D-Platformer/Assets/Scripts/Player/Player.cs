@@ -7,11 +7,15 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    private CapsuleCollider2D cd;
+
+    private bool canBeControlled = false;
 
     [Header("Movement Info")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float doubleJumpForce;
+    private float defaultGravityScale;
     private bool canDoubleJump;
 
     [Header("Buffer & Coyote Jump")]
@@ -51,12 +55,22 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
+        cd = GetComponent<CapsuleCollider2D>();
+    }
+
+    private void Start()
+    {
+        defaultGravityScale = rb.gravityScale;
+        RespawnFinished(false);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
             Knockback();
+
+        if (canBeControlled == false)
+            return;
 
         UpdateAirboneStatus();
 
@@ -69,6 +83,23 @@ public class Player : MonoBehaviour
         HandleFlip();
         HandleCollision();
         HandleAnimation();
+    }
+
+    public void RespawnFinished(bool finished)
+    {
+
+        if (finished)
+        {
+            rb.gravityScale = defaultGravityScale;
+            canBeControlled = true;
+            cd.enabled = true;
+        }
+        else
+        {
+            rb.gravityScale = 0;
+            canBeControlled = false;
+            cd.enabled = false;
+        }
     }
 
     public void Knockback()
