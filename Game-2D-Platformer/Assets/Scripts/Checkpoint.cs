@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    private Animator anim;
+    private Animator anim => GetComponent<Animator>();
     private bool active;
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,6 +23,6 @@ public class Checkpoint : MonoBehaviour
     private void ActivateCheckpoint()
     {
         active = true;
-        anim.SetBool("active", active);
+        anim.SetBool("activate", active);
     }
 }
