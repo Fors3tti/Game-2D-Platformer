@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [Header("Player")]
+    [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private Transform respawnPoint;
     public Player player;
 
     [Header("Fruits Management")]
@@ -18,6 +21,12 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+    }
+
+    public void RespawnPlayer()
+    {
+        GameObject newPlayer = Instantiate(playerPrefab, respawnPoint.position, Quaternion.identity);
+        player = newPlayer.GetComponent<Player>();
     }
 
     public void AddFruit() => fruitsCollected++;
