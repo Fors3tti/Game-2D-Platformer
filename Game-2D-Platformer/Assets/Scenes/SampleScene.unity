@@ -439,8 +439,10 @@ MonoBehaviour:
   respawnPoint: {fileID: 1215467005}
   respawnDelay: 0.5
   player: {fileID: 611226029}
-  fruitsHaveRandomLook: 0
+  fruitsAreRandom: 0
   fruitsCollected: 0
+  totalFruits: 0
+  allFruits: []
 --- !u!1 &1190484506
 GameObject:
   m_ObjectHideFlags: 0
@@ -11228,6 +11230,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4459214168367001160, guid: 398a0264a122a71448005fb5a137d4ca, type: 3}
+      propertyPath: fruitType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5110914592726067457, guid: 398a0264a122a71448005fb5a137d4ca, type: 3}
       propertyPath: m_Name
       value: Fruit
