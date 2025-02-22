@@ -66,13 +66,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-            Knockback();
+        UpdateAirboneStatus();
 
         if (canBeControlled == false)
             return;
-
-        UpdateAirboneStatus();
 
         if (isKnocked)
             return;
@@ -102,13 +99,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Knockback()
+    public void Knockback(float sourceDamageXPosition)
     {
+        float knockbackDir = 1;
+
+        if (transform.position.x < sourceDamageXPosition)
+            knockbackDir = -1;
+
         if (isKnocked)
             return;
 
         StartCoroutine(KnockbackRoutine());
-        rb.velocity = new Vector2(knockbackPower.x * -facingDir, knockbackPower.y);
+        rb.velocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y);
     }
 
     private IEnumerator KnockbackRoutine()
