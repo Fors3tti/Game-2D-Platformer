@@ -6798,6 +6798,7 @@ GameObject:
   - component: {fileID: 1488529784}
   - component: {fileID: 1488529786}
   - component: {fileID: 1488529787}
+  - component: {fileID: 1488529788}
   m_Layer: 0
   m_Name: Trap_Trampoline
   m_TagString: Untagged
@@ -6904,7 +6905,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -6942,6 +6943,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1488529788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488529783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209c7afd8ec4f2f429a87c54a4058d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushDirection: {x: 0, y: 20}
+  duration: 1
 --- !u!1 &1604722058
 GameObject:
   m_ObjectHideFlags: 0
