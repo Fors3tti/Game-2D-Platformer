@@ -6,7 +6,7 @@ public class Trap_Trampoline : MonoBehaviour
 {
     private Animator anim;
 
-    [SerializeField] private Vector2 pushDirection;
+    [SerializeField] private float pushPower;
     [SerializeField] private float duration;
 
     private void Awake()
@@ -20,7 +20,7 @@ public class Trap_Trampoline : MonoBehaviour
 
         if (player != null)
         {
-            player.Push(pushDirection, duration);
+            player.Push(transform.up * pushPower, duration);
             anim.SetTrigger("activate");
         }
     }
