@@ -161,5 +161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushPower: 10
   duration: 0.5
+  cooldown: 1
   rotationRight: 1
   rotationSpeed: 90

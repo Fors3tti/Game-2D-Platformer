@@ -579,6 +579,7 @@ MonoBehaviour:
   fruitsCollected: 0
   totalFruits: 0
   canReactivate: 0
+  arrowPrefab: {fileID: 5388878634716819762, guid: 77b76c265a5f8ba45a0b2433751a0b08, type: 3}
 --- !u!1 &1190484506
 GameObject:
   m_ObjectHideFlags: 0
