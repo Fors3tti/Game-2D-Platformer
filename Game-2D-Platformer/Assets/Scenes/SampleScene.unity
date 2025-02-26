@@ -591,6 +591,7 @@ GameObject:
   - component: {fileID: 1122496485}
   - component: {fileID: 1122496487}
   - component: {fileID: 1122496488}
+  - component: {fileID: 1122496489}
   m_Layer: 0
   m_Name: Trap_Arrow
   m_TagString: Untagged
@@ -725,6 +726,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1122496489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122496484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d558b407fa072642892ae2140757cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushPower: 20
+  duration: 0.5
+  rotationRight: 0
+  rotationSpeed: 90
 --- !u!1 &1190484506
 GameObject:
   m_ObjectHideFlags: 0
