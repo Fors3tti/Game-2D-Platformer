@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class Trap_FallingPlatform : MonoBehaviour
 {
+    private Animator anim;
+    private Rigidbody2D rb;
+    private BoxCollider2D[] colliders;
+
     [SerializeField] private float speed;
     [SerializeField] private float travelDistance;
     private Vector3[] wayPoints;
     private int wayPointIndex;
-    public bool canMove;
+    private bool canMove = false;
 
-    private void Start()
+    [Header("Platform fall details")]
+    [SerializeField] private float impactSpeed;
+    [SerializeField] private float impactDuration;
+    private float impactTimer;
+    private bool impactHappend;
+    [Space]
+    [SerializeField] private float fallDelay;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        colliders = GetComponents<BoxCollider2D>();
+    }
+
+    private IEnumerator Start()
     {
         SetupWayPoints();
+
+        float randomDelay = Random.Range(0, .6f);
+
+        yield return new WaitForSeconds(randomDelay);
+
+        canMove = true;
     }
 
     private void SetupWayPoints()
@@ -27,6 +52,7 @@ public class Trap_FallingPlatform : MonoBehaviour
 
     private void Update()
     {
+        HandleImpact();
         HandleMovement();
     }
 
@@ -44,6 +70,47 @@ public class Trap_FallingPlatform : MonoBehaviour
 
             if (wayPointIndex >= wayPoints.Length)
                 wayPointIndex = 0;
+        }
+    }
+
+    private void HandleImpact()
+    {
+        if (impactTimer < 0)
+            return;
+
+        impactTimer -= Time.deltaTime;
+        transform.position = Vector2.MoveTowards(
+            transform.position, transform.position + (Vector3.down * 10), impactSpeed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (impactHappend)
+            return;
+
+        Player player = collision.gameObject.GetComponent<Player>();
+
+        if (player != null)
+        {
+            Invoke(nameof(SwitchOffPlatform), fallDelay);
+            impactTimer = impactDuration;
+            impactHappend = true;
+        }
+    }
+
+    private void SwitchOffPlatform()
+    {
+        anim.SetTrigger("deactivate");
+
+        canMove = false;
+
+        rb.isKinematic = false;
+        rb.gravityScale = 3.5f;
+        rb.drag = .5f;
+
+        foreach (BoxCollider2D collider in colliders)
+        {
+            collider.enabled = false;
         }
     }
 }
