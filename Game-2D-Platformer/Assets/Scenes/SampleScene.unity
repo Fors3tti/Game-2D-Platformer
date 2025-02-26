@@ -738,9 +738,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d558b407fa072642892ae2140757cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushPower: 20
+  pushPower: 10
   duration: 0.5
-  rotationRight: 0
+  rotationRight: 1
   rotationSpeed: 90
 --- !u!1 &1190484506
 GameObject:
