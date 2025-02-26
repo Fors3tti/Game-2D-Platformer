@@ -69,7 +69,11 @@ public class Player : MonoBehaviour
         UpdateAirboneStatus();
 
         if (canBeControlled == false)
+        {
+            HandleCollision();
+            HandleAnimations();
             return;
+        }
 
         if (isKnocked)
             return;
@@ -79,7 +83,7 @@ public class Player : MonoBehaviour
         HandleMovement();
         HandleFlip();
         HandleCollision();
-        HandleAnimation();
+        HandleAnimations();
     }
 
     public void RespawnFinished(bool finished)
@@ -129,6 +133,23 @@ public class Player : MonoBehaviour
         GameObject newDeathVfx = Instantiate(deathVfx, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
+    }
+
+    public void Push(Vector2 direction, float duration = 0)
+    {
+        StartCoroutine(PushCoroutine(direction, duration));
+    }
+
+    private IEnumerator PushCoroutine(Vector2 direction, float duration)
+    {
+        canBeControlled = false;
+
+        rb.velocity = Vector2.zero;
+        rb.AddForce(direction, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(duration);
+
+        canBeControlled = true;
     }
 
     private void UpdateAirboneStatus()
@@ -256,7 +277,7 @@ public class Player : MonoBehaviour
             Vector2.right * facingDir, wallCheckDistance, whatIsGround);
     }
 
-    private void HandleAnimation()
+    private void HandleAnimations()
     {
         anim.SetFloat("xVelocity", rb.velocity.x);
         anim.SetFloat("yVelocity", rb.velocity.y);
