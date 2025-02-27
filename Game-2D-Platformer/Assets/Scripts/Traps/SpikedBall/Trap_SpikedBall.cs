@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Trap_SpikedBall : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Rigidbody2D spikeRb;
+    [SerializeField] private float pushForce;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        Vector2 pushVector = new Vector2(pushForce, 0);
+        spikeRb.AddForce(pushVector, ForceMode2D.Impulse);
     }
 }

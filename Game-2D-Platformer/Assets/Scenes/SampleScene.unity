@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 66431615}
   - component: {fileID: 66431614}
   - component: {fileID: 66431617}
+  - component: {fileID: 66431618}
   m_Layer: 0
   m_Name: Spiked Ball
   m_TagString: Untagged
@@ -168,7 +169,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -270,6 +271,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &66431618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66431613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c536cb834c3794dae057353df39e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &259022841
 GameObject:
   m_ObjectHideFlags: 0
@@ -11668,6 +11681,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c813d52beb6c0d94a8bce8bdbf111730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spikeRb: {fileID: 66431617}
+  pushForce: 5
 --- !u!1001 &425159291686718699
 PrefabInstance:
   m_ObjectHideFlags: 0
