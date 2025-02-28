@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107702383}
   - component: {fileID: 107702382}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_Mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11408,18 +11408,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2648292047070576603, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
-      propertyPath: knockbackPower.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2648292047070576603, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
-      propertyPath: knockbackPower.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2648292047070576603, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
-      propertyPath: knockbackDuration
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2730767097154199136, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
       propertyPath: m_Name
       value: Player

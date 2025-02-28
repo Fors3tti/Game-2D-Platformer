@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7455603095738457427}
   - component: {fileID: 5444280282885692531}
   - component: {fileID: 2648292047070576603}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ MonoBehaviour:
   wallJumpDuration: 0.5
   wallJumpForce: {x: 8, y: 16}
   knockbackDuration: 0.5
-  knockbackPower: {x: 2, y: 4}
+  knockbackPower: {x: 4, y: 8}
   groundCheckDistance: 0.8
   wallCheckDistance: 0.65
   whatIsGround:
@@ -201,7 +201,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -273805491
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -6367560908665664636, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
