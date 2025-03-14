@@ -14,6 +14,10 @@ public class Enemy_Mushroom : Enemy
         anim.SetFloat("xVelocity", rb.velocity.x);
 
         HandleMovement();
+        HandleCollision();
+
+        if (!isGroundDetected)
+            Flip();
     }
 
     private void HandleMovement()
