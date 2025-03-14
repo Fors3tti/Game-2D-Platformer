@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected Animator anim;
+    protected Rigidbody2D rb;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] protected float moveSpeed;
+
+    protected int facingDir = -1;
+
+    protected virtual void Awake()
     {
-        
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 }
