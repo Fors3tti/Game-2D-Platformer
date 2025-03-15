@@ -234,7 +234,7 @@ Transform:
   m_GameObject: {fileID: 107702381}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 0.1, z: 0}
+  m_LocalPosition: {x: -7.5, y: 1.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -275,9 +275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd43b3b10a448964b94f5ea4f73d7132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 5
   idleDuration: 1.5
-  idleTimer: 0
   groundCheckDistance: 1
   wallCheckDistance: 0.85
   whatIsGround:

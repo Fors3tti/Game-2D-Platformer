@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Enemy_Mushroom : Enemy
 {
-    protected override void Awake()
-    {
-        base.Awake();
-    }
 
     protected override void Update()
     {
@@ -18,7 +14,15 @@ public class Enemy_Mushroom : Enemy
         HandleCollision();
         HandleMovement();
 
-        if (!isGroundDetected || isWallDetected)
+        if (isGrounded)
+        {
+            HandleTurnAround();
+        }
+    }
+
+    private void HandleTurnAround()
+    {
+        if (!isGroundInFrontDetected || isWallDetected)
         {
             Flip();
             idleTimer = idleDuration;
@@ -31,8 +35,7 @@ public class Enemy_Mushroom : Enemy
         if (idleTimer > 0)
             return;
 
-        if(isGroundDetected)
-            rb.velocity = new Vector2(moveSpeed * facingDir, rb.velocity.y);
+        rb.velocity = new Vector2(moveSpeed * facingDir, rb.velocity.y);
     }
 
 }
