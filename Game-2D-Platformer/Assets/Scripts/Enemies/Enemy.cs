@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     protected Rigidbody2D rb;
 
     [SerializeField] protected float moveSpeed;
+    [SerializeField] protected float idleDuration;
+    [SerializeField] protected float idleTimer;
 
     [Header("Basic collision")]
     [SerializeField] protected float groundCheckDistance = 1f;
@@ -24,6 +26,11 @@ public class Enemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    protected virtual void Update()
+    {
+        idleTimer -= Time.deltaTime;
     }
 
     protected virtual void HandleFlip(float xValue)

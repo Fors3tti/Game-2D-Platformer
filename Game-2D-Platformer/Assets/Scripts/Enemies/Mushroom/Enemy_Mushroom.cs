@@ -9,19 +9,28 @@ public class Enemy_Mushroom : Enemy
         base.Awake();
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+
         anim.SetFloat("xVelocity", rb.velocity.x);
 
-        HandleMovement();
         HandleCollision();
+        HandleMovement();
 
-        if (!isGroundDetected)
+        if (!isGroundDetected || isWallDetected)
+        {
             Flip();
+            idleTimer = idleDuration;
+        }
     }
 
     private void HandleMovement()
     {
+        if (idleTimer > 0)
+            return;
+
         rb.velocity = new Vector2(moveSpeed * facingDir, rb.velocity.y);
     }
+
 }
