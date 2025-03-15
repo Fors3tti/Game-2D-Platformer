@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd43b3b10a448964b94f5ea4f73d7132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 3
   idleDuration: 1.5
   idleTimer: 0
   groundCheckDistance: 1
