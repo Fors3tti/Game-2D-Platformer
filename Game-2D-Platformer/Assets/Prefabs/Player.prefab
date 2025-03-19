@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &854049161810860032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5480966326464134186}
+  m_Layer: 8
+  m_Name: EnemyCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5480966326464134186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854049161810860032}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5841204832803451972}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2730767097154199136
 GameObject:
   m_ObjectHideFlags: 0
@@ -33,6 +64,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1792404001828228566}
+  - {fileID: 5480966326464134186}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &7455603095738457427
@@ -96,8 +128,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.033700943, y: -0.004382491}
-  m_Size: {x: 1.0353813, y: 1.4567273}
+  m_Offset: {x: -0.0031738281, y: -0.004382491}
+  m_Size: {x: 1.1091309, y: 1.4567273}
   m_Direction: 0
 --- !u!114 &2648292047070576603
 MonoBehaviour:
@@ -125,6 +157,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  enemyCheck: {fileID: 5480966326464134186}
+  enemyCheckRadius: 0.49
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 128
   deathVfx: {fileID: 4977907057103293302, guid: 317ec68c6104f8f42a3cc6a2d0e6c3d8, type: 3}
 --- !u!1 &4885005117335796043
 GameObject:

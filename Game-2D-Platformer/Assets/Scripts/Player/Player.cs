@@ -95,6 +95,19 @@ public class Player : MonoBehaviour
     {
         if (rb.velocity.y >= 0)
             return;
+
+        Collider2D[] colliders = Physics2D.
+            OverlapCircleAll(enemyCheck.position, enemyCheckRadius, whatIsEnemy);
+
+        foreach (var enemy in colliders)
+        {
+            Enemy newEnemy = enemy.GetComponent<Enemy>();
+            if(newEnemy != null)
+            {
+                newEnemy.Die();
+                Jump();
+            }
+        }
     }
 
     public void RespawnFinished(bool finished)
