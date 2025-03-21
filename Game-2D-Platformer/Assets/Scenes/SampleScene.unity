@@ -11944,6 +11944,7 @@ GameObject:
   - component: {fileID: 5734780711038830190}
   - component: {fileID: 1861780122289169997}
   - component: {fileID: 537535305399108453}
+  - component: {fileID: 8622842006276212657}
   m_Layer: 7
   m_Name: Enemy_Rino
   m_TagString: Untagged
@@ -11968,6 +11969,18 @@ Transform:
   - {fileID: 1735850730368811285}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8622842006276212657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8364915579917878129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d368781c4385f40915217b1ffbe13e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
