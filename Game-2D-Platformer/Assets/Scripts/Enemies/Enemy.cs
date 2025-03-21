@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected GameObject damageTrigger;
     [Space]
     [SerializeField] protected float moveSpeed;
+    protected bool canMove;
     [SerializeField] protected float idleDuration;
     protected float idleTimer;
 
@@ -24,6 +25,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float groundCheckDistance = 1f;
     [SerializeField] protected float wallCheckDistance = .5f;
     [SerializeField] protected LayerMask whatIsGround;
+    [SerializeField] protected LayerMask whatIsPlayer;
     [SerializeField] protected Transform groundCheck;
     protected bool isGrounded;
     protected bool isWallDetected;
@@ -89,7 +91,7 @@ public class Enemy : MonoBehaviour
             Vector2.right * facingDir, wallCheckDistance, whatIsGround);
     }
 
-    private void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position,
             new Vector2(transform.position.x, transform.position.y - groundCheckDistance));

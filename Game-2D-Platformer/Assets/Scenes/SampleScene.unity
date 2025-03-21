@@ -186,8 +186,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.06468248, y: -0.09486729}
-  m_Size: {x: 1.3796787, y: 1.694466}
+  m_Offset: {x: 0.06468248, y: -0.118163764}
+  m_Size: {x: 1.3796787, y: 1.741059}
   m_Direction: 0
 --- !u!114 &114695992
 MonoBehaviour:
@@ -498,7 +498,7 @@ Transform:
   m_GameObject: {fileID: 1048485042}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.854, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6993,6 +6993,7 @@ GameObject:
   - component: {fileID: 1728360345}
   - component: {fileID: 1728360347}
   - component: {fileID: 1728360346}
+  - component: {fileID: 1728360348}
   m_Layer: 7
   m_Name: Enemy_Chicken
   m_TagString: Untagged
@@ -7127,7 +7128,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.06252599, y: -0.113425136}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7137,7 +7138,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2, y: 2.125}
+  m_Size: {x: 1.6334672, y: 1.8688896}
   m_EdgeRadius: 0
 --- !u!50 &1728360347
 Rigidbody2D:
@@ -7165,7 +7166,36 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &1728360348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728360342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7aef36fb5ad3c428d3a0991bfb2f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageTrigger: {fileID: 114695989}
+  moveSpeed: 4
+  idleDuration: 1.5
+  deathImpactSpeed: 0.5
+  deathRotationSpeed: 90
+  groundCheckDistance: 1.075
+  wallCheckDistance: 0.85
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
+  groundCheck: {fileID: 1048485043}
+  aggroDuration: 2.5
+  playerDetected: 0
+  detectionRange: 7.5
 --- !u!1 &1900709043
 GameObject:
   m_ObjectHideFlags: 0
@@ -11853,9 +11883,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1964675570887184829, guid: ba09acc51e7a4494699d2fdf2d289870, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.851
+      objectReference: {fileID: 0}
     - target: {fileID: 5543032302016016275, guid: ba09acc51e7a4494699d2fdf2d289870, type: 3}
       propertyPath: m_Name
       value: Enemy_Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701531000644988686, guid: ba09acc51e7a4494699d2fdf2d289870, type: 3}
+      propertyPath: whatIsPlayer.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 5715232829372492626, guid: ba09acc51e7a4494699d2fdf2d289870, type: 3}
       propertyPath: m_LocalPosition.x
