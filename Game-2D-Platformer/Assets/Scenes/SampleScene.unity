@@ -128,9 +128,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 114695990}
-  - component: {fileID: 114695992}
   - component: {fileID: 114695993}
-  m_Layer: 7
+  - component: {fileID: 114695992}
+  m_Layer: 0
   m_Name: DamageTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11892,17 +11892,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1964675570887184829, guid: ba09acc51e7a4494699d2fdf2d289870, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.851
-      objectReference: {fileID: 0}
     - target: {fileID: 5543032302016016275, guid: ba09acc51e7a4494699d2fdf2d289870, type: 3}
       propertyPath: m_Name
       value: Enemy_Mushroom
-      objectReference: {fileID: 0}
-    - target: {fileID: 5701531000644988686, guid: ba09acc51e7a4494699d2fdf2d289870, type: 3}
-      propertyPath: whatIsPlayer.m_Bits
-      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 5715232829372492626, guid: ba09acc51e7a4494699d2fdf2d289870, type: 3}
       propertyPath: m_LocalPosition.x

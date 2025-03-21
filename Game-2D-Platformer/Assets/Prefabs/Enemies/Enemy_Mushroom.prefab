@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd43b3b10a448964b94f5ea4f73d7132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   damageTrigger: {fileID: 7878651084558557862}
   moveSpeed: 5
   idleDuration: 1.5
@@ -136,6 +137,9 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
   groundCheck: {fileID: 1964675570887184829}
 --- !u!61 &2390487589294508719
 BoxCollider2D:
@@ -235,7 +239,7 @@ Transform:
   m_GameObject: {fileID: 6471999412194440395}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.875, y: 0, z: 0}
+  m_LocalPosition: {x: -0.851, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
