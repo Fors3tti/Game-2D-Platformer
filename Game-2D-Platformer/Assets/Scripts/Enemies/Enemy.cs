@@ -8,12 +8,14 @@ public class Enemy : MonoBehaviour
     protected Rigidbody2D rb;
     protected Collider2D col;
 
+    [SerializeField] protected Transform player;
     [SerializeField] protected GameObject damageTrigger;
-    [Space]
+
+    [Header("General Infos")]
     [SerializeField] protected float moveSpeed;
-    protected bool canMove;
     [SerializeField] protected float idleDuration;
     protected float idleTimer;
+    protected bool canMove;
 
     [Header("Death Details")]
     [SerializeField] private float deathImpactSpeed;
@@ -39,6 +41,17 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+    }
+
+    protected virtual void Start()
+    {
+        InvokeRepeating(nameof(UpdatePlayersRef), 0, 1);
+    }
+
+    private void UpdatePlayersRef()
+    {
+        if(player == null)
+            player = GameManager.instance.player.transform;
     }
 
     protected virtual void Update()
@@ -68,7 +81,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void HandleFlip(float xValue)
     {
-        if (xValue < 0 && facingRight || xValue > 0 && !facingRight)
+        if (xValue < transform.position.x && facingRight || xValue > transform.position.x && !facingRight)
         {
             Flip();
         }
