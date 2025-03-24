@@ -21,7 +21,6 @@ public class Enemy_Rino : Enemy
     {
         base.Update();
 
-        HandleCollision();
         HandleCharge();
     }
 
@@ -30,10 +29,7 @@ public class Enemy_Rino : Enemy
         if (canMove == false)
             return;
 
-        moveSpeed = moveSpeed + (Time.deltaTime * speedUpRate);
-
-        if (moveSpeed >= maxSpeed)
-            maxSpeed = moveSpeed;
+        HandleSpeedUp();
 
         rb.velocity = new Vector2(moveSpeed * facingDir, rb.velocity.y);
 
@@ -44,6 +40,14 @@ public class Enemy_Rino : Enemy
         {
             TurnAround();
         }
+    }
+
+    private void HandleSpeedUp()
+    {
+        moveSpeed = moveSpeed + (Time.deltaTime * speedUpRate);
+
+        if (moveSpeed >= maxSpeed)
+            maxSpeed = moveSpeed;
     }
 
     private void TurnAround()

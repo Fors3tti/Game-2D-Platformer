@@ -56,6 +56,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
+        HandleCollision();
         HandleAnimator();
 
         idleTimer -= Time.deltaTime;

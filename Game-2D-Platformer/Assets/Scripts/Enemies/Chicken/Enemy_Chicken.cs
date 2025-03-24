@@ -30,7 +30,6 @@ public class Enemy_Chicken : Enemy
         if (aggroTimer < 0)
             canMove = false;
 
-        HandleCollision();
         HandleMovement();
 
         if (isGrounded)

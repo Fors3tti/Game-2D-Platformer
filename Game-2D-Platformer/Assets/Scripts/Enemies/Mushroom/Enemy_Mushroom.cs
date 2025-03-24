@@ -12,7 +12,6 @@ public class Enemy_Mushroom : Enemy
         if (isDead)
             return;
 
-        HandleCollision();
         HandleMovement();
 
         if (isGrounded)
