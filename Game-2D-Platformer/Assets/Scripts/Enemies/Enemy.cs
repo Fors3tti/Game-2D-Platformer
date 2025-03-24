@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected LayerMask whatIsGround;
     [SerializeField] protected LayerMask whatIsPlayer;
     [SerializeField] protected Transform groundCheck;
+    [SerializeField] protected float playerDetectionDistance;
+    protected bool isPlayerDetected;
     protected bool isGrounded;
     protected bool isWallDetected;
     protected bool isGroundInFrontDetected;
@@ -54,6 +56,8 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
+        HandleAnimator();
+
         idleTimer -= Time.deltaTime;
 
         if (isDead)
@@ -95,6 +99,11 @@ public class Enemy : MonoBehaviour
         facingRight = !facingRight;
     }
 
+    protected virtual void HandleAnimator()
+    {
+        anim.SetFloat("xVelocity", rb.velocity.x);
+    }
+
     protected virtual void HandleCollision()
     {
         isGrounded = Physics2D.Raycast(transform.position,
@@ -103,6 +112,8 @@ public class Enemy : MonoBehaviour
             Vector2.down, groundCheckDistance, whatIsGround);
         isWallDetected = Physics2D.Raycast(transform.position,
             Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+        isPlayerDetected = Physics2D.Raycast(transform.position,
+            Vector2.right * facingDir, playerDetectionDistance, whatIsPlayer);
     }
 
     protected virtual void OnDrawGizmos()
@@ -113,5 +124,7 @@ public class Enemy : MonoBehaviour
             new Vector2(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
         Gizmos.DrawLine(transform.position,
             new Vector2(transform.position.x + (wallCheckDistance * facingDir), transform.position.y));
+        Gizmos.DrawLine(transform.position,
+            new Vector2(transform.position.x + (playerDetectionDistance * facingDir), transform.position.y));
     }
 }

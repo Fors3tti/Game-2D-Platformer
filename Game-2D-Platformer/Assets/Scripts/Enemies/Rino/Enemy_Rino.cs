@@ -9,8 +9,6 @@ public class Enemy_Rino : Enemy
     [SerializeField] private float speedUpRate;
     private float defaultSpeed;
     [SerializeField] private Vector2 impactPower;
-    [SerializeField] private float detectionRange;
-    private bool playerDetected;
 
     protected override void Start()
     {
@@ -22,8 +20,6 @@ public class Enemy_Rino : Enemy
     protected override void Update()
     {
         base.Update();
-
-        anim.SetFloat("xVelocity", rb.velocity.x);
 
         HandleCollision();
         HandleCharge();
@@ -76,18 +72,7 @@ public class Enemy_Rino : Enemy
     {
         base.HandleCollision();
 
-        playerDetected = Physics2D.Raycast(transform.position,
-            Vector2.right * facingDir, detectionRange, whatIsPlayer);
-
-        if (playerDetected && isGrounded)
+        if (isPlayerDetected && isGrounded)
             canMove = true;
-    }
-
-    protected override void OnDrawGizmos()
-    {
-        base.OnDrawGizmos();
-
-        Gizmos.DrawLine(transform.position,
-            new Vector2(transform.position.x + (detectionRange * facingDir), transform.position.y));
     }
 }

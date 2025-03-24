@@ -11480,6 +11480,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4850708433111031350, guid: 2b29c8c25672fbc408fa733afcd5627d, type: 3}
+      propertyPath: playerDetectionDistance
+      value: 7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6055757715148089335, guid: 2b29c8c25672fbc408fa733afcd5627d, type: 3}
       propertyPath: m_Name
       value: Enemy_Rino
