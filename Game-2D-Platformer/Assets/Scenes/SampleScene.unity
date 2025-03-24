@@ -11318,7 +11318,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.46502948, y: -0.4872966}
+  m_Offset: {x: 0.010047913, y: -0.4872966}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11328,7 +11328,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4494157, y: 0.9874329}
+  m_Size: {x: 2.3995705, y: 0.9874329}
   m_EdgeRadius: 0
 --- !u!1001 &1631488376303469397
 PrefabInstance:
@@ -11983,7 +11983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   damageTrigger: {fileID: 6173449441867402820}
-  moveSpeed: 10
+  moveSpeed: 6
   idleDuration: 1.5
   deathImpactSpeed: 5
   deathRotationSpeed: 120
@@ -11996,6 +11996,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   groundCheck: {fileID: 2574096227680566623}
+  maxSpeed: 8
+  speedUpRate: 1.5
+  impactPower: {x: 2, y: 4}
   detectionRange: 7.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
