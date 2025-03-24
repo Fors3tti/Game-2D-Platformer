@@ -11436,7 +11436,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.034798145, y: -0.21827859}
+  m_Offset: {x: 0.034798145, y: -0.2024613}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11446,7 +11446,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.4464817, y: 1.6884428}
+  m_Size: {x: 2.4464817, y: 1.6568083}
   m_EdgeRadius: 0
 --- !u!4 &2574096227680566623
 Transform:
@@ -11457,7 +11457,7 @@ Transform:
   m_GameObject: {fileID: 7001903114297940009}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.851, y: 0, z: 0}
+  m_LocalPosition: {x: -1.25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11981,6 +11981,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d368781c4385f40915217b1ffbe13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  damageTrigger: {fileID: 6173449441867402820}
+  moveSpeed: 10
+  idleDuration: 1.5
+  deathImpactSpeed: 5
+  deathRotationSpeed: 120
+  groundCheckDistance: 1.15
+  wallCheckDistance: 1.25
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
+  groundCheck: {fileID: 2574096227680566623}
+  detectionRange: 7.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
