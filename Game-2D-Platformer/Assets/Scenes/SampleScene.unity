@@ -11526,32 +11526,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958b78b43f0476d46b6ccb179f8b8cc7, type: 3}
---- !u!114 &3248252501045795884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3379734704166509745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd43b3b10a448964b94f5ea4f73d7132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  idleDuration: 1.5
-  deathImpactSpeed: 0.5
-  deathRotationSpeed: 90
-  groundCheckDistance: 1.05
-  wallCheckDistance: 0.85
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 256
-  groundCheck: {fileID: 8739263980387164831}
-  playerDetectionDistance: 0
 --- !u!4 &3268313390705825904
 Transform:
   m_ObjectHideFlags: 0
@@ -11580,7 +11554,6 @@ GameObject:
   - component: {fileID: 3268313390705825904}
   - component: {fileID: 278185438115659358}
   - component: {fileID: 1542223405682399662}
-  - component: {fileID: 3248252501045795884}
   - component: {fileID: 4838910542458960269}
   - component: {fileID: 6738696945630370981}
   m_Layer: 7
@@ -11734,7 +11707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5715232829372492626, guid: ba09acc51e7a4494699d2fdf2d289870, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.75
       objectReference: {fileID: 0}
     - target: {fileID: 5715232829372492626, guid: ba09acc51e7a4494699d2fdf2d289870, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11826,7 +11799,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0031645298, y: -0.39018154}
+  m_Offset: {x: 0.18640614, y: -0.27960902}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11836,7 +11809,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5215297, y: 1.181663}
+  m_Size: {x: 1.6916947, y: 2.005651}
   m_EdgeRadius: 0
 --- !u!1001 &5278337221584146803
 PrefabInstance:
@@ -11929,7 +11902,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0023880005, y: -0.46858323}
+  m_Offset: {x: 0.15271544, y: -0.33930165}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11939,7 +11912,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.374506, y: 1.0248597}
+  m_Size: {x: 1.5548992, y: 1.8246018}
   m_EdgeRadius: 0
 --- !u!50 &6738696945630370981
 Rigidbody2D:
