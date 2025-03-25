@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private SpriteRenderer sr => GetComponent<SpriteRenderer>();
+
     protected Animator anim;
     protected Rigidbody2D rb;
     protected Transform player;
@@ -46,6 +48,12 @@ public class Enemy : MonoBehaviour
     protected virtual void Start()
     {
         InvokeRepeating(nameof(UpdatePlayersRef), 0, 1);
+
+        if(sr.flipX == true && !facingRight)
+        {
+            sr.flipX = false;
+            Flip();
+        }
     }
 
     private void UpdatePlayersRef()
@@ -98,6 +106,12 @@ public class Enemy : MonoBehaviour
         facingDir = facingDir * -1;
         transform.Rotate(0, 180, 0);
         facingRight = !facingRight;
+    }
+
+    [ContextMenu("Change Facing Direction")]
+    public void FlipDefaultFacingDirection()
+    {
+        sr.flipX = !sr.flipX;
     }
 
     protected virtual void HandleAnimator()
