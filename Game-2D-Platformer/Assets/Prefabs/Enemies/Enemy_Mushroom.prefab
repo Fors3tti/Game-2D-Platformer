@@ -130,7 +130,7 @@ MonoBehaviour:
   idleDuration: 1.5
   deathImpactSpeed: 0.5
   deathRotationSpeed: 90
-  groundCheckDistance: 1
+  groundCheckDistance: 1.05
   wallCheckDistance: 0.85
   whatIsGround:
     serializedVersion: 2
@@ -139,6 +139,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   groundCheck: {fileID: 1964675570887184829}
+  playerDetectionDistance: 0
 --- !u!61 &2390487589294508719
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -310,7 +311,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0031647682, y: -0.37973905}
+  m_Offset: {x: 0.0023880005, y: -0.46858323}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -320,7 +321,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5633001, y: 1.202548}
+  m_Size: {x: 1.374506, y: 1.0248597}
   m_EdgeRadius: 0
 --- !u!114 &937312956234324584
 MonoBehaviour:

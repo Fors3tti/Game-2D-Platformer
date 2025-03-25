@@ -334,7 +334,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   groundCheck: {fileID: 4566245002695165136}
+  playerDetectionDistance: 7.5
   maxSpeed: 8
   speedUpRate: 1.5
   impactPower: {x: 2, y: 4}
-  detectionRange: 7.5
