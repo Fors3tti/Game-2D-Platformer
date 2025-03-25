@@ -5,6 +5,9 @@ using UnityEngine;
 public class Enemy_Plant : Enemy
 {
     [Header("Plant Details")]
+    [SerializeField] private Enemy_Bullet bulletPrefab;
+    [SerializeField] private Transform gunPoint;
+    [SerializeField] private float bulletSpeed;
     [SerializeField] private float attackCooldown;
     private float lastTimeAttacked;
 
@@ -22,6 +25,16 @@ public class Enemy_Plant : Enemy
     {
         lastTimeAttacked = Time.time;
         anim.SetTrigger("attack");
+    }
+
+    private void CreateBullet()
+    {
+        Enemy_Bullet newBullet = Instantiate(bulletPrefab, gunPoint.position, Quaternion.identity);
+
+        Vector2 bulletVelocity = new Vector2(facingDir * bulletSpeed, 0);
+        newBullet.SetVelocity(bulletVelocity);
+
+        Destroy(newBullet.gameObject, 10);
     }
 
     protected override void HandleAnimator()

@@ -288,6 +288,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba359f30cd3de049b65c0a0033a6795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &500000369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 500000370}
+  m_Layer: 7
+  m_Name: GunPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &500000370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500000369}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.125, y: 0.125, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3268313390705825904}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -11519,6 +11550,7 @@ Transform:
   m_Children:
   - {fileID: 8739263980387164831}
   - {fileID: 4821076612574944981}
+  - {fileID: 500000370}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3379734704166509745
@@ -11968,8 +12000,10 @@ MonoBehaviour:
     m_Bits: 256
   groundCheck: {fileID: 8739263980387164831}
   playerDetectionDistance: 10
+  bulletPrefab: {fileID: 4688771831230408915, guid: 1d55c98abb45a1f4391431bf2d08811d, type: 3}
+  gunPoint: {fileID: 500000370}
+  bulletSpeed: 5
   attackCooldown: 1.5
-  lastTimeAttacked: 0
 --- !u!114 &8001196034782816586
 MonoBehaviour:
   m_ObjectHideFlags: 0
