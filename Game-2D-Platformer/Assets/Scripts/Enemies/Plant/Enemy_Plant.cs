@@ -6,7 +6,7 @@ public class Enemy_Plant : Enemy
 {
     [Header("Plant Details")]
     [SerializeField] private float attackCooldown;
-    public float lastTimeAttacked;
+    private float lastTimeAttacked;
 
     protected override void Update()
     {
