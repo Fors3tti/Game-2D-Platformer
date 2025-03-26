@@ -33,7 +33,7 @@ public class Enemy_Trunk : Enemy
 
     private void Attack()
     {
-        idleTimer = idleDuration;
+        idleTimer = idleDuration + attackCooldown;
         lastTimeAttacked = Time.time;
         anim.SetTrigger("attack");
     }
@@ -44,6 +44,9 @@ public class Enemy_Trunk : Enemy
 
         Vector2 bulletVelocity = new Vector2(facingDir * bulletSpeed, 0);
         newBullet.SetVelocity(bulletVelocity);
+
+        if (facingDir == 1)
+            newBullet.FlipSprite();
 
         Destroy(newBullet.gameObject, 10);
     }
