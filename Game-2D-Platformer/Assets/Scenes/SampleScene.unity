@@ -11708,6 +11708,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 463588128236833926, guid: 997d10327ce08c44698d703d5426d6ad, type: 3}
+      propertyPath: bulletSpeed
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 463588128236833926, guid: 997d10327ce08c44698d703d5426d6ad, type: 3}
+      propertyPath: attackCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 463588128236833926, guid: 997d10327ce08c44698d703d5426d6ad, type: 3}
+      propertyPath: playerDetectionDistance
+      value: 8.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4037902229403698841, guid: 997d10327ce08c44698d703d5426d6ad, type: 3}
       propertyPath: m_Name
       value: Enemy_Trunk
