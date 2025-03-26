@@ -305,7 +305,7 @@ MonoBehaviour:
     m_Bits: 256
   groundCheck: {fileID: 7731181903555473139}
   playerDetectionDistance: 10
-  bulletPrefab: {fileID: 4688771831230408915, guid: 1d55c98abb45a1f4391431bf2d08811d, type: 3}
+  bulletPrefab: {fileID: 3762495004186710391, guid: 35ec9adddcd58bf4f9e4e57adafb2e0d, type: 3}
   gunPoint: {fileID: 7460296899585638800}
   bulletSpeed: 5
   attackCooldown: 1.5
