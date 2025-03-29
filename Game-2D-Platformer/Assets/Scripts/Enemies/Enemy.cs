@@ -18,9 +18,9 @@ public class Enemy : MonoBehaviour
     protected bool canMove = true;
 
     [Header("Death Details")]
-    [SerializeField] private float deathImpactSpeed;
-    [SerializeField] private float deathRotationSpeed;
-    private int deathRotationDirection = 1;
+    [SerializeField] protected float deathImpactSpeed;
+    [SerializeField] protected float deathRotationSpeed;
+    protected int deathRotationDirection = 1;
     protected bool isDead;
 
     [Header("Basic Collision")]
