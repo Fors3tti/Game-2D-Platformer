@@ -57,7 +57,7 @@ public class Enemy_Trunk : Enemy
         {
             Flip();
             idleTimer = idleDuration;
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
         }
     }
 
@@ -66,6 +66,6 @@ public class Enemy_Trunk : Enemy
         if (idleTimer > 0)
             return;
 
-        rb.velocity = new Vector2(moveSpeed * facingDir, rb.velocity.y);
+        rb.linearVelocity = new Vector2(moveSpeed * facingDir, rb.linearVelocity.y);
     }
 }
