@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float idleDuration;
     protected float idleTimer;
-    protected bool canMove;
+    protected bool canMove = true;
 
     [Header("Death Details")]
     [SerializeField] private float deathImpactSpeed;
