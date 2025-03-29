@@ -11590,6 +11590,7 @@ GameObject:
   - component: {fileID: 6146712418983664194}
   - component: {fileID: 5471425821818666858}
   - component: {fileID: 6146712418983664195}
+  - component: {fileID: 6146712418983664196}
   m_Layer: 7
   m_Name: Enemy_Snail
   m_TagString: Untagged
@@ -11941,6 +11942,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6146712418983664196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4075189414938017662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce7f416a4af09644a152245371057c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8008204608134414672
 Transform:
   m_ObjectHideFlags: 0
