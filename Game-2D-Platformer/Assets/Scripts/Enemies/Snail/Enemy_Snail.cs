@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Enemy_Snail : Enemy
 {
-    public bool hasBody = true;
+    [Header("Snail Details")]
+    [SerializeField] private Enemy_Snail_Body bodyPrefab;
+    private bool hasBody = true;
 
     protected override void Update()
     {
@@ -57,5 +59,17 @@ public class Enemy_Snail : Enemy
             return;
 
         rb.velocity = new Vector2(moveSpeed * facingDir, rb.velocity.y);
+    }
+
+    private void CreateBody()
+    {
+        Enemy_Snail_Body newBody = Instantiate(bodyPrefab, transform.position, Quaternion.identity);
+
+        if (Random.Range(0, 100) < 50)
+            deathRotationDirection = deathRotationDirection * -1;
+
+        newBody.SetupBody(deathImpactSpeed, deathRotationSpeed * deathRotationDirection);
+
+        Destroy(newBody.gameObject, 10);
     }
 }

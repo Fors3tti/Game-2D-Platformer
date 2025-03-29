@@ -11968,7 +11968,7 @@ MonoBehaviour:
     m_Bits: 256
   groundCheck: {fileID: 8008204608134414672}
   playerDetectionDistance: 0
-  hasBody: 1
+  bodyPrefab: {fileID: 6341411369986598179, guid: cccacd9b0f9343f4daeb4ad50dd314b9, type: 3}
 --- !u!4 &8008204608134414672
 Transform:
   m_ObjectHideFlags: 0
