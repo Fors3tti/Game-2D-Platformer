@@ -13,7 +13,7 @@ public class FinishPoint : MonoBehaviour
         if(player != null)
         {
             anim.SetTrigger("activate");
-            Debug.Log("You complete the level");
+            GameManager.instance.LoadTheEndScene();
         }
     }
 }
