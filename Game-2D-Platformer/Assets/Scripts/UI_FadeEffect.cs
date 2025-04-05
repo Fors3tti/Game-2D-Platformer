@@ -14,9 +14,9 @@ public class UI_FadeEffect : MonoBehaviour
     private IEnumerator FadeCoroutine(float targetAlpha, float duration)
     {
         float time = 0;
-        Color currrentColor = fadeImage.color;
+        Color currentColor = fadeImage.color;
 
-        float startAlpha = currrentColor.a;
+        float startAlpha = currentColor.a;
 
         while (time < duration)
         {
@@ -24,10 +24,10 @@ public class UI_FadeEffect : MonoBehaviour
 
             float alpha = Mathf.Lerp(startAlpha, targetAlpha, time / duration);
 
-            fadeImage.color = new Color(currrentColor.r, currrentColor.g, currrentColor.b, alpha);
+            fadeImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, alpha);
             yield return null;
         }
 
-        fadeImage.color = new Color(currrentColor.r, currrentColor.g, currrentColor.b, targetAlpha);
+        fadeImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, targetAlpha);
     }
 }
