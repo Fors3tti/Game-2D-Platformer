@@ -18,6 +18,8 @@ public class UI_MainMenu : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene(sceneName);
+        fadeEffect.ScreenFade(1, 1.5f, LoadLevelScene);
     }
+
+    private void LoadLevelScene() => SceneManager.LoadScene(sceneName);
 }

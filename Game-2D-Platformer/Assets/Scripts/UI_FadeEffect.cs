@@ -6,12 +6,12 @@ public class UI_FadeEffect : MonoBehaviour
 {
     [SerializeField] private Image fadeImage;
 
-    public void ScreenFade(float targetAlpha, float duration)
+    public void ScreenFade(float targetAlpha, float duration, System.Action onComplete = null)
     {
-        StartCoroutine(FadeCoroutine(targetAlpha, duration));
+        StartCoroutine(FadeCoroutine(targetAlpha, duration, onComplete));
     }
 
-    private IEnumerator FadeCoroutine(float targetAlpha, float duration)
+    private IEnumerator FadeCoroutine(float targetAlpha, float duration, System.Action onComplete)
     {
         float time = 0;
         Color currentColor = fadeImage.color;
@@ -29,5 +29,7 @@ public class UI_FadeEffect : MonoBehaviour
         }
 
         fadeImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, targetAlpha);
+
+        onComplete?.Invoke();
     }
 }
