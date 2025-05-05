@@ -6,6 +6,11 @@ public class UI_SkinSelection : MonoBehaviour
     [SerializeField] private int maxIndex;
     [SerializeField] private Animator skinDisplay;
 
+    public void SelectSkin()
+    {
+        SkinManager.instance.SetSkinId(currentIndex);
+    }
+
     public void PreviousSkin()
     {
         currentIndex--;
