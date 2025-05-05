@@ -11622,19 +11622,19 @@ PrefabInstance:
     - target: {fileID: 2648292047070576603, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
       propertyPath: 'animators.Array.data[0]'
       value: 
-      objectReference: {fileID: 22100000, guid: e39943e083d44744aaedbe2b8c48733d, type: 2}
+      objectReference: {fileID: 22100000, guid: e2cf1bfb095ffea448577d87fd196182, type: 2}
     - target: {fileID: 2648292047070576603, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
       propertyPath: 'animators.Array.data[1]'
       value: 
-      objectReference: {fileID: 22100000, guid: 4bd51cb4171900b459d66b8b51ba0771, type: 2}
+      objectReference: {fileID: 22100000, guid: e39943e083d44744aaedbe2b8c48733d, type: 2}
     - target: {fileID: 2648292047070576603, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
       propertyPath: 'animators.Array.data[2]'
       value: 
-      objectReference: {fileID: 22100000, guid: ffbded7927a4ada40ad753367c7c224c, type: 2}
+      objectReference: {fileID: 22100000, guid: 4bd51cb4171900b459d66b8b51ba0771, type: 2}
     - target: {fileID: 2648292047070576603, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
       propertyPath: 'animators.Array.data[3]'
       value: 
-      objectReference: {fileID: 22100000, guid: e2cf1bfb095ffea448577d87fd196182, type: 2}
+      objectReference: {fileID: 22100000, guid: ffbded7927a4ada40ad753367c7c224c, type: 2}
     - target: {fileID: 2730767097154199136, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
       propertyPath: m_Name
       value: Player
