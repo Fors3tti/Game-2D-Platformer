@@ -4795,7 +4795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f29b460b4d0a94cbd39e659b135583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: SampleScene
+  FirstLevelName: Level_1
   uiElements:
   - {fileID: 1924519874}
   - {fileID: 1442447905}
