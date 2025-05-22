@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Level Management")]
     [SerializeField] private int currentLevelIndex;
+    private int nextLevelIndex;
 
     [Header("Player")]
     [SerializeField] private GameObject playerPrefab;
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        nextLevelIndex = currentLevelIndex + 1;
         CollectFruitInfo();
     }
 
@@ -76,16 +78,21 @@ public class GameManager : MonoBehaviour
         GameObject newObject = Instantiate(prefab, newPosition, Quaternion.identity);
     }
 
+    public void LevelFinished()
+    {
+        PlayerPrefs.SetInt("Level" + nextLevelIndex + "Unlocked", 1);
+
+        LoadNextScene();
+    }
+
     private void LoadTheEndScene() => SceneManager.LoadScene("TheEnd");
 
     private void LoadNextLevel()
     {
-        int nextLevelIndex = currentLevelIndex + 1;
-
         SceneManager.LoadScene("Level_" + nextLevelIndex);
     }
-
-    public void LevelFinished()
+    
+    private void LoadNextScene()
     {
         UI_FadeEffect fadeEffect = UI_InGame.instance.fadeEffect;
 
