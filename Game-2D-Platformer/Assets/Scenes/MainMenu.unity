@@ -4780,8 +4780,9 @@ GameObject:
   - component: {fileID: 1823962792}
   - component: {fileID: 1823962791}
   - component: {fileID: 1823962790}
+  - component: {fileID: 1823962793}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Level_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4802,10 +4803,10 @@ RectTransform:
   - {fileID: 629403638}
   m_Father: {fileID: 1590932158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 895, y: -80}
+  m_SizeDelta: {x: 280, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1823962790
 MonoBehaviour:
@@ -4889,6 +4890,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823962788}
   m_CullTransparentMesh: 1
+--- !u!114 &1823962793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823962788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589b0e481ab28eb42b1cd91e31856c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumberText: {fileID: 629403639}
+  sceneName: 
 --- !u!1 &1824593114
 GameObject:
   m_ObjectHideFlags: 0
@@ -5282,6 +5297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2092458930}
+  - component: {fileID: 2092458931}
   m_Layer: 5
   m_Name: LevelSelection_UI
   m_TagString: Untagged
@@ -5310,6 +5326,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2092458931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092458929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08f3468df4adb74db23a308d091e437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPrefab: {fileID: 0}
+  buttonsParent: {fileID: 0}
 --- !u!1 &2122296891
 GameObject:
   m_ObjectHideFlags: 0
