@@ -20,10 +20,15 @@ public class UI_LevelSelection : MonoBehaviour
 
         for (int i = 1; i < levelsAmount; i++)
         {
+            if (IsLevelUnlocked(i) == false)
+                return;
+
             UI_LevelButton newButton = Instantiate(buttonPrefab, buttonsParent);
             newButton.SetupButton(i);
         }
     }
+
+    private bool IsLevelUnlocked(int levelIndex) => levelsUnlocked[levelIndex];
 
     private void LoadLevelsInfo()
     {

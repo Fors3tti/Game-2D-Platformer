@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
     public void LevelFinished()
     {
         PlayerPrefs.SetInt("Level" + nextLevelIndex + "Unlocked", 1);
+        PlayerPrefs.SetInt("ContinueLevelNumber", nextLevelIndex);
 
         LoadNextScene();
     }
