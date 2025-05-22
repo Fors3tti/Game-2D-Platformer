@@ -80,10 +80,16 @@ public class GameManager : MonoBehaviour
 
     public void LevelFinished()
     {
-        PlayerPrefs.SetInt("Level" + nextLevelIndex + "Unlocked", 1);
-        PlayerPrefs.SetInt("ContinueLevelNumber", nextLevelIndex);
-
+        SaveLevelProgression();
         LoadNextScene();
+    }
+
+    private void SaveLevelProgression()
+    {
+        PlayerPrefs.SetInt("Level" + nextLevelIndex + "Unlocked", 1);
+
+        if (NoMoreLevels() == false)
+            PlayerPrefs.SetInt("ContinueLevelNumber", nextLevelIndex);
     }
 
     private void LoadTheEndScene() => SceneManager.LoadScene("TheEnd");
@@ -97,12 +103,17 @@ public class GameManager : MonoBehaviour
     {
         UI_FadeEffect fadeEffect = UI_InGame.instance.fadeEffect;
 
-        int lastLevelIndex = SceneManager.sceneCountInBuildSettings - 2;
-        bool noMoreLevels = currentLevelIndex == lastLevelIndex;
-
-        if (noMoreLevels)
+        if (NoMoreLevels())
             fadeEffect.ScreenFade(1, 1.5f, LoadTheEndScene);
         else
             fadeEffect.ScreenFade(1, 1.5f, LoadNextLevel);
+    }
+
+    private bool NoMoreLevels()
+    {
+        int lastLevelIndex = SceneManager.sceneCountInBuildSettings - 2;
+        bool noMoreLevels = currentLevelIndex == lastLevelIndex;
+
+        return noMoreLevels;
     }
 }
