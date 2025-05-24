@@ -1,16 +1,22 @@
 using UnityEngine;
 
+public enum DifficultyType { Easy, Normal, Hard }
+
 public class DifficultyManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static DifficultyManager instance;
+
+    public DifficultyType difficulty;
+
+    private void Awake()
     {
-        
+        DontDestroyOnLoad(this.gameObject);
+
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void SetDifficulty(DifficultyType newDifficulty) => difficulty = newDifficulty;
 }
