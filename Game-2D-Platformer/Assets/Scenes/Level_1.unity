@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6063aadb1a773146a8d63341f0dd4fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 0
+  difficulty: 1
 --- !u!4 &288838739
 Transform:
   m_ObjectHideFlags: 0
@@ -11420,5 +11420,5 @@ SceneRoots:
   - {fileID: 108740842}
   - {fileID: 336786641}
   - {fileID: 399175014}
-  - {fileID: 288838739}
   - {fileID: 1709278851}
+  - {fileID: 288838739}
