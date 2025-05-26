@@ -12,6 +12,9 @@ public struct Skin
 
 public class UI_SkinSelection : MonoBehaviour
 {
+    private UI_LevelSelection levelSelectionUI;
+    private UI_MainMenu mainMenuUI;
+
     [SerializeField] private Skin[] skinList;
 
     [Header("UI details")]
@@ -27,6 +30,9 @@ public class UI_SkinSelection : MonoBehaviour
     {
         LoadSkinUnlocks();
         UpdatedSkinDisplay();
+
+        mainMenuUI = GetComponentInParent<UI_MainMenu>();
+        levelSelectionUI = mainMenuUI.GetComponentInChildren<UI_LevelSelection>(true);
     }
 
     private void LoadSkinUnlocks()
@@ -46,7 +52,10 @@ public class UI_SkinSelection : MonoBehaviour
         if (skinList[skinIndex].unlocked == false)
             BuySkin(skinIndex);
         else
+        {
             SkinManager.instance.SetSkinId(skinIndex);
+            mainMenuUI.SwitchUI(levelSelectionUI.gameObject);
+        }
 
         UpdatedSkinDisplay();
     }
