@@ -202,7 +202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &153089709
 RectTransform:
   m_ObjectHideFlags: 0
@@ -950,7 +950,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 970804278}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3677142075249399978}
+        m_TargetAssemblyTypeName: UI_InGame, Assembly-CSharp
+        m_MethodName: GoToMainMenuButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &970804278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1071,7 +1083,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 973133997}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3677142075249399978}
+        m_TargetAssemblyTypeName: UI_InGame, Assembly-CSharp
+        m_MethodName: PauseButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &973133997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12022,6 +12046,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4980599200054996012, guid: a32077367de8f1441ad94c1cec4cb56d, type: 3}
+      propertyPath: pauseUI
+      value: 
+      objectReference: {fileID: 153089708}
     - target: {fileID: 7594944453277848420, guid: a32077367de8f1441ad94c1cec4cb56d, type: 3}
       propertyPath: m_Name
       value: UI_InGame
@@ -12039,6 +12067,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2292501688143640105, guid: a32077367de8f1441ad94c1cec4cb56d, type: 3}
   m_PrefabInstance: {fileID: 3677142075249399976}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3677142075249399978 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4980599200054996012, guid: a32077367de8f1441ad94c1cec4cb56d, type: 3}
+  m_PrefabInstance: {fileID: 3677142075249399976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49446159f40eeae4a966fcbafb2b3742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
