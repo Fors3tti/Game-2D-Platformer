@@ -7198,7 +7198,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4459214168367001160, guid: 398a0264a122a71448005fb5a137d4ca, type: 3}
       propertyPath: fruitType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5110914592726067457, guid: 398a0264a122a71448005fb5a137d4ca, type: 3}
       propertyPath: m_Name
@@ -13261,7 +13261,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4459214168367001160, guid: 398a0264a122a71448005fb5a137d4ca, type: 3}
       propertyPath: fruitType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5110914592726067457, guid: 398a0264a122a71448005fb5a137d4ca, type: 3}
       propertyPath: m_Name
