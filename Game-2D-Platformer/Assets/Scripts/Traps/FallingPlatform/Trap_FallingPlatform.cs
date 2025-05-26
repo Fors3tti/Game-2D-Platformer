@@ -98,6 +98,7 @@ public class Trap_FallingPlatform : MonoBehaviour
         }
     }
 
+    [System.Obsolete]
     private void SwitchOffPlatform()
     {
         anim.SetTrigger("deactivate");
