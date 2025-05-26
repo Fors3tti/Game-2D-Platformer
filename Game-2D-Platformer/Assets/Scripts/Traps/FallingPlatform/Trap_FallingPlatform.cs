@@ -18,7 +18,7 @@ public class Trap_FallingPlatform : MonoBehaviour
     [SerializeField] private float impactSpeed;
     [SerializeField] private float impactDuration;
     private float impactTimer;
-    private bool impactHappend;
+    private bool impactHappened;
     [Space]
     [SerializeField] private float fallDelay;
 
@@ -64,7 +64,7 @@ public class Trap_FallingPlatform : MonoBehaviour
         transform.position = Vector2.MoveTowards(
             transform.position, wayPoints[wayPointIndex], speed * Time.deltaTime);
 
-        if(Vector2.Distance(transform.position, wayPoints[wayPointIndex]) < .1f)
+        if (Vector2.Distance(transform.position, wayPoints[wayPointIndex]) < .1f)
         {
             wayPointIndex++;
 
@@ -85,7 +85,7 @@ public class Trap_FallingPlatform : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (impactHappend)
+        if (impactHappened)
             return;
 
         Player player = collision.gameObject.GetComponent<Player>();
@@ -94,7 +94,7 @@ public class Trap_FallingPlatform : MonoBehaviour
         {
             Invoke(nameof(SwitchOffPlatform), fallDelay);
             impactTimer = impactDuration;
-            impactHappend = true;
+            impactHappened = true;
         }
     }
 
