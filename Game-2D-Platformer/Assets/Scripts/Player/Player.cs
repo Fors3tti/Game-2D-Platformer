@@ -186,7 +186,9 @@ public class Player : MonoBehaviour
         if (isKnocked)
             return;
 
+        CameraManager.instance.ScreenShake();
         StartCoroutine(KnockbackRoutine());
+
         rb.linearVelocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y);
     }
 
