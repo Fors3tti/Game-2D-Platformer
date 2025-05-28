@@ -17,9 +17,9 @@ public class CameraManager : MonoBehaviour
         impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
-    public void ScreenShake()
+    public void ScreenShake(float shakeDirection)
     {
-        impulseSource.DefaultVelocity = new Vector2(shakeVelocity.x, shakeVelocity.y);
+        impulseSource.DefaultVelocity = new Vector2(shakeVelocity.x * shakeDirection, shakeVelocity.y);
         impulseSource.GenerateImpulse();
     }
 }
