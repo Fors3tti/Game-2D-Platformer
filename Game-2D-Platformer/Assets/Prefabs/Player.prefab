@@ -143,8 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef374f934edbd54cbf4aeb699df7bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpForce: 14
+  moveSpeed: 14
+  jumpForce: 16
   doubleJumpForce: 10
   bufferJumpWindow: 0.25
   coyoteJumpWindow: 0.25
