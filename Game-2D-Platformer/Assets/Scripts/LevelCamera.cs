@@ -1,16 +1,23 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class LevelCamera : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private CinemachineCamera cinemachine;
+
+    private void Awake()
     {
-        
+        cinemachine = GetComponentInChildren<CinemachineCamera>(true);
+        EnableCamera(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EnableCamera(bool enable)
     {
-        
+        cinemachine.gameObject.SetActive(enable);
+    }
+
+    public void SetNewTarget(Transform newTarget)
+    {
+        cinemachine.Follow = newTarget;
     }
 }
