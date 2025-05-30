@@ -17,10 +17,13 @@ public class AudioManager : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    public void PlaySFX(int sfxToPlay)
+    public void PlaySFX(int sfxToPlay, bool randomPitch = true)
     {
         if (sfxToPlay >= sfx.Length)
             return;
+
+        if (randomPitch)
+            sfx[sfxToPlay].pitch = Random.Range(.9f, 1.1f);
 
         sfx[sfxToPlay].Play();
     }
