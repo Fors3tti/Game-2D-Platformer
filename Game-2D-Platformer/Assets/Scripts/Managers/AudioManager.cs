@@ -2,15 +2,28 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static AudioManager instance;
+
+    [Header("Audio Source")]
+    [SerializeField] private AudioSource[] sfx;
+
+    private void Awake()
     {
-        
+        DontDestroyOnLoad(this.gameObject);
+
+        if(instance == null)
+            instance = this;
+        else
+            Destroy(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlaySFX(int sfxToPlay)
     {
-        
+        if (sfxToPlay >= sfx.Length)
+            return;
+
+        sfx[sfxToPlay].Play();
     }
+
+    public void StopSFX(int sfxToStop) => sfx[sfxToStop].Stop();
 }
