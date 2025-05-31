@@ -20,13 +20,27 @@ public class UI_Settings : MonoBehaviour
 
     public void SFXSliderValue(float value)
     {
+        sfxSliderText.text = Mathf.RoundToInt(value * 100) + "%";
         float newValue = Mathf.Log10(value) * mixerMultiplier;
         audioMixer.SetFloat(sfxParameter, newValue);
     }
 
     public void BGMSliderValue(float value)
     {
+        bgmSliderText.text = Mathf.RoundToInt(value * 100) + "%";
         float newValue = Mathf.Log10(value) * mixerMultiplier;
         audioMixer.SetFloat(bgmParameter, newValue);
+    }
+
+    private void OnDisable()
+    {
+        PlayerPrefs.SetFloat(sfxParameter, sfxSlider.value);
+        PlayerPrefs.SetFloat(bgmParameter, bgmSlider.value);
+    }
+
+    private void OnEnable()
+    {
+        sfxSlider.value = PlayerPrefs.GetFloat(sfxParameter, .5f);
+        bgmSlider.value = PlayerPrefs.GetFloat(bgmParameter, .5f);
     }
 }
