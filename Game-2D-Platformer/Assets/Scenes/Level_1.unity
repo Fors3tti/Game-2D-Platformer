@@ -713,6 +713,7 @@ MonoBehaviour:
   totalFruits: 0
   canReactivate: 0
   arrowPrefab: {fileID: 5388878634716819762, guid: 77b76c265a5f8ba45a0b2433751a0b08, type: 3}
+  audioManager: {fileID: 4292170151483894682, guid: 5d81cb6f3372a1944b27148297275b84, type: 3}
 --- !u!1001 &1068582277
 PrefabInstance:
   m_ObjectHideFlags: 0
