@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private DifficultyType gameDifficulty;
+    [SerializeField] private DifficultyType gameDifficulty;
     private GameManager gameManager;
 
     private Rigidbody2D rb;

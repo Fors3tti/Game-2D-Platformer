@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Managers")]
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private PlayerManager playerManager;
+    [SerializeField] private SkinManager skinManager;
+    [SerializeField] private DifficultyManager difficultyManager;
 
     private void Awake()
     {
@@ -59,6 +62,15 @@ public class GameManager : MonoBehaviour
     {
         if (AudioManager.instance == null)
             Instantiate(audioManager);
+
+        if (PlayerManager.instance == null)
+            Instantiate(playerManager);
+
+        if (SkinManager.instance == null)
+            Instantiate(skinManager);
+
+        if (DifficultyManager.instance == null)
+            Instantiate(difficultyManager);
     }
 
     private void CollectFruitInfo()
