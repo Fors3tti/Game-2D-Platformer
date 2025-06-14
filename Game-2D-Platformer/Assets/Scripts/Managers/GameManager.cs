@@ -14,12 +14,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int currentLevelIndex;
     private int nextLevelIndex;
 
-    [Header("Player")]
-    [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private Transform respawnPoint;
-    [SerializeField] private float respawnDelay;
-    public Player player;
-
     [Header("Fruits Management")]
     public bool fruitsAreRandom;
     public int fruitsCollected;
@@ -48,12 +42,6 @@ public class GameManager : MonoBehaviour
 
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if (respawnPoint == null)
-            respawnPoint = FindFirstObjectByType<StartPoint>().transform;
-
-        if (player == null)
-            player = FindFirstObjectByType<Player>();
-
         nextLevelIndex = currentLevelIndex + 1;
 
         CollectFruitInfo();
@@ -81,26 +69,6 @@ public class GameManager : MonoBehaviour
         inGameUI.UpdateFruitUI(fruitsCollected, totalFruits);
 
         PlayerPrefs.SetInt("Level" + currentLevelIndex + "TotalFruits", totalFruits);
-    }
-
-    public void UpdateRespawnPosition(Transform newRespawnPoint) => respawnPoint = newRespawnPoint;
-
-    public void RespawnPlayer()
-    {
-        DifficultyManager difficultyManager = DifficultyManager.instance;
-
-        if (difficultyManager != null && difficultyManager.difficulty == DifficultyType.Hard)
-            return;
-
-        StartCoroutine(RespawnCoroutine());
-    }
-
-    private IEnumerator RespawnCoroutine()
-    {
-        yield return new WaitForSeconds(respawnDelay);
-
-        GameObject newPlayer = Instantiate(playerPrefab, respawnPoint.position, Quaternion.identity);
-        player = newPlayer.GetComponent<Player>();
     }
 
     public void AddFruit()
