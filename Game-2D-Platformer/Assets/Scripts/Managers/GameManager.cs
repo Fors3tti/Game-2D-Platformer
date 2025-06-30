@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public bool fruitsAreRandom;
     public int fruitsCollected;
     public int totalFruits;
+    public Transform fruitParent;
 
     [Header("Checkpoints")]
     public bool canReactivate;
@@ -82,6 +83,20 @@ public class GameManager : MonoBehaviour
         inGameUI.UpdateFruitUI(fruitsCollected, totalFruits);
 
         PlayerPrefs.SetInt("Level" + currentLevelIndex + "TotalFruits", totalFruits);
+    }
+
+    [ContextMenu("Parent All Fruits")]
+    private void ParentAllTheFruits()
+    {
+        if (fruitParent == null)
+            return;
+
+        Fruit[] allFruits = FindObjectsByType<Fruit>(FindObjectsSortMode.None);
+
+        foreach (Fruit fruit in allFruits)
+        {
+            fruit.transform.parent = fruitParent;
+        }
     }
 
     public void AddFruit()
