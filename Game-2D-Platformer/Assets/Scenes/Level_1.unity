@@ -37317,6 +37317,10 @@ PrefabInstance:
       propertyPath: CollisionModule.m_Bounce.scalar
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5091796205114510367, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5841204832803451972, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.5
