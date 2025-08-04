@@ -144,7 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef374f934edbd54cbf4aeb699df7bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDifficulty: 0
+  fruitDrop: {fileID: 1563120324232634904, guid: e38e519cac7abd7429c846d3ea24248e, type: 3}
+  gameDifficulty: 2
   moveSpeed: 14
   jumpForce: 16
   doubleJumpForce: 10
@@ -346,6 +347,42 @@ PrefabInstance:
     - target: {fileID: 7062136467446017081, guid: 32c52fddb5f6c1442852b284add73c63, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788780637406274098, guid: 32c52fddb5f6c1442852b284add73c63, type: 3}
+      propertyPath: lengthInSec
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788780637406274098, guid: 32c52fddb5f6c1442852b284add73c63, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788780637406274098, guid: 32c52fddb5f6c1442852b284add73c63, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788780637406274098, guid: 32c52fddb5f6c1442852b284add73c63, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788780637406274098, guid: 32c52fddb5f6c1442852b284add73c63, type: 3}
+      propertyPath: VelocityModule.inWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788780637406274098, guid: 32c52fddb5f6c1442852b284add73c63, type: 3}
+      propertyPath: CollisionModule.collisionMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788780637406274098, guid: 32c52fddb5f6c1442852b284add73c63, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788780637406274098, guid: 32c52fddb5f6c1442852b284add73c63, type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788780637406274098, guid: 32c52fddb5f6c1442852b284add73c63, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
