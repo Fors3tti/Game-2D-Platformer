@@ -194,3 +194,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fruitType: 0
   pickupVfx: {fileID: 3952338929686920926, guid: a494723706d958a47bf469b6d9440dd7, type: 3}
+  velocity: {x: 1, y: 1}
+  transperentColor: {r: 1, g: 1, b: 1, a: 0.29411766}
+  waitTime:
+  - 0.1
+  - 0.15
+  - 0.2
+  - 0.25
+  - 0.3
