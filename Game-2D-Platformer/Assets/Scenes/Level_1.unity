@@ -37293,6 +37293,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2648292047070576603, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
+      propertyPath: enemyCheckRadius
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 2730767097154199136, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
       propertyPath: m_Name
       value: Player
