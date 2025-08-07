@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private Animator anim;
     private CapsuleCollider2D cd;
 
-    private PlayerInput playerInput;
+    public PlayerInput playerInput {  get; private set; }
     private Vector2 moveInput;
 
     private bool canBeControlled = false;
