@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 [System.Serializable]
 
@@ -12,6 +14,10 @@ public struct Skin
 
 public class UI_SkinSelection : MonoBehaviour
 {
+    [SerializeField] private GameObject firstSelected;
+    [Space]
+
+    private DefaultInputActions defaultInput;
     private UI_LevelSelection levelSelectionUI;
     private UI_MainMenu mainMenuUI;
 
@@ -26,13 +32,30 @@ public class UI_SkinSelection : MonoBehaviour
     [SerializeField] private TextMeshProUGUI priceText;
     [SerializeField] private TextMeshProUGUI bankText;
 
-    private void Start()
+    private void Awake()
     {
         LoadSkinUnlocks();
         UpdatedSkinDisplay();
 
         mainMenuUI = GetComponentInParent<UI_MainMenu>();
         levelSelectionUI = mainMenuUI.GetComponentInChildren<UI_LevelSelection>(true);
+        defaultInput = new DefaultInputActions();
+    }
+
+    private void OnEnable()
+    {
+        defaultInput.Enable();
+        mainMenuUI.UpdateLastSelected(firstSelected);
+        EventSystem.current.SetSelectedGameObject(firstSelected);
+
+        defaultInput.UI.Navigate.performed += ctx =>
+        {
+            if (ctx.ReadValue<Vector2>().x <= -1)
+                PreviousSkin();
+
+            if (ctx.ReadValue<Vector2>().x >= 1)
+                NextSkin();
+        };
     }
 
     private void LoadSkinUnlocks()

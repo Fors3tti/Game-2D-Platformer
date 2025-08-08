@@ -10488,6 +10488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb01dc93cb76c064f8e77c1614fe93f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstSelected: {fileID: 1256006197}
   skinList:
   - skinName: Virtual Guy
     skinPrice: 0
