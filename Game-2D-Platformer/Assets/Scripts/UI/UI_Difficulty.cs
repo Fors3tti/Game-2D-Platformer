@@ -1,8 +1,15 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UI_Difficulty : MonoBehaviour
 {
+    [SerializeField] private GameObject firstSelected;
     private DifficultyManager difficultyManager;
+
+    private void OnEnable()
+    {
+        EventSystem.current.SetSelectedGameObject(firstSelected);
+    }
 
     private void Start()
     {
