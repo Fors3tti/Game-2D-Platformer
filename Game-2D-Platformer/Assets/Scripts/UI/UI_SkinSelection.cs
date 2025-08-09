@@ -32,6 +32,10 @@ public class UI_SkinSelection : MonoBehaviour
     [SerializeField] private TextMeshProUGUI priceText;
     [SerializeField] private TextMeshProUGUI bankText;
 
+    [Space]
+    [SerializeField] private float inputCooldown = .1f;
+    private float lastTimeInput;
+
     private void Awake()
     {
         LoadSkinUnlocks();
@@ -50,12 +54,20 @@ public class UI_SkinSelection : MonoBehaviour
 
         defaultInput.UI.Navigate.performed += ctx =>
         {
+            if (Time.time - lastTimeInput < inputCooldown)
+                return;
+
             if (ctx.ReadValue<Vector2>().x <= -1)
                 PreviousSkin();
 
             if (ctx.ReadValue<Vector2>().x >= 1)
                 NextSkin();
         };
+    }
+
+    private void OnDisable()
+    {
+        defaultInput.Disable();
     }
 
     private void LoadSkinUnlocks()
@@ -87,6 +99,7 @@ public class UI_SkinSelection : MonoBehaviour
 
     public void PreviousSkin()
     {
+        lastTimeInput = Time.time;
         skinIndex--;
 
         if (skinIndex < 0)
@@ -99,6 +112,7 @@ public class UI_SkinSelection : MonoBehaviour
 
     public void NextSkin()
     {
+        lastTimeInput = Time.time;
         skinIndex++;
 
         if (skinIndex > maxIndex)
