@@ -7471,6 +7471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 861041168}
   - component: {fileID: 861041169}
+  - component: {fileID: 861041170}
   m_Layer: 5
   m_Name: Slider_BGM
   m_TagString: Untagged
@@ -7563,6 +7564,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &861041170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861041167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0a1be7eef4bf04f8fbc38247710351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &875334904
 GameObject:
   m_ObjectHideFlags: 0
@@ -9129,6 +9142,7 @@ GameObject:
   - component: {fileID: 1253161125}
   - component: {fileID: 1253161124}
   - component: {fileID: 1253161123}
+  - component: {fileID: 1253161126}
   m_Layer: 5
   m_Name: Back_Button
   m_TagString: Untagged
@@ -9262,6 +9276,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253161121}
   m_CullTransparentMesh: 1
+--- !u!114 &1253161126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253161121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0a1be7eef4bf04f8fbc38247710351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1255439861
 GameObject:
   m_ObjectHideFlags: 0
@@ -9487,6 +9513,7 @@ GameObject:
   - component: {fileID: 1256006201}
   - component: {fileID: 1256006200}
   - component: {fileID: 1256006199}
+  - component: {fileID: 1256006202}
   m_Layer: 5
   m_Name: Select_Button
   m_TagString: Untagged
@@ -9608,6 +9635,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256006197}
   m_CullTransparentMesh: 1
+--- !u!114 &1256006202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256006197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0a1be7eef4bf04f8fbc38247710351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1276555058
 GameObject:
   m_ObjectHideFlags: 0
@@ -9941,6 +9980,7 @@ GameObject:
   - component: {fileID: 1301392534}
   - component: {fileID: 1301392533}
   - component: {fileID: 1301392532}
+  - component: {fileID: 1301392535}
   m_Layer: 5
   m_Name: Back_Button
   m_TagString: Untagged
@@ -10062,6 +10102,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1301392530}
   m_CullTransparentMesh: 1
+--- !u!114 &1301392535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301392530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0a1be7eef4bf04f8fbc38247710351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1318119687
 GameObject:
   m_ObjectHideFlags: 0
@@ -12763,6 +12815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2096869871}
   - component: {fileID: 2096869872}
+  - component: {fileID: 2096869873}
   m_Layer: 5
   m_Name: Slider_SFX
   m_TagString: Untagged
@@ -12855,6 +12908,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2096869873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096869870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0a1be7eef4bf04f8fbc38247710351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2122296891
 GameObject:
   m_ObjectHideFlags: 0
