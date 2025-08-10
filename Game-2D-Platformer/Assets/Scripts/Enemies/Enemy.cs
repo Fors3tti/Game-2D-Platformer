@@ -75,6 +75,11 @@ public class Enemy : MonoBehaviour
 
     public virtual void Die()
     {
+        if (rb.isKinematic)
+        {
+            rb.isKinematic = false;
+        }
+
         foreach(var collider in colliders)
         {
             collider.enabled = false;

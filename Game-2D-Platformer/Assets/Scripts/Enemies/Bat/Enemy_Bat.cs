@@ -4,17 +4,23 @@ public class Enemy_Bat : Enemy
 {
     [Header("Bat Details")]
     [SerializeField] private float agroRadius;
+    [SerializeField] private float chaseDuration;
+    [SerializeField] private float attackSpeed;
+
+    private float defaultSpeed;
+    private float chaseTimer;
 
     private Vector3 originPosition;
     private Vector3 destination;
 
-    public bool canDetectPlayer;
-    public Collider2D target;
+    private bool canDetectPlayer;
+    private Collider2D target;
 
     protected override void Awake()
     {
         base.Awake();
 
+        defaultSpeed = moveSpeed;
         originPosition = transform.position;
         canMove = false;
     }
@@ -22,6 +28,8 @@ public class Enemy_Bat : Enemy
     protected override void Update()
     {
         base.Update();
+
+        chaseTimer -= Time.deltaTime;
 
         if (idleTimer <  0 )
             canDetectPlayer = true;
@@ -40,6 +48,11 @@ public class Enemy_Bat : Enemy
         HandleFlip(destination.x);
         transform.position = Vector2.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
 
+        if (chaseTimer > 0 & target != null)
+            destination = target.transform.position;
+        else
+            moveSpeed = attackSpeed;
+
         if (Vector2.Distance(transform.position, destination) < .1f)
         {
             if (destination == originPosition)
@@ -47,8 +60,9 @@ public class Enemy_Bat : Enemy
                 idleTimer = idleDuration;
                 canDetectPlayer = false;
                 canMove = false;
-                target = null;
                 anim.SetBool("isMoving", false);
+                target = null;
+                moveSpeed = defaultSpeed;
             }
             else
             {
@@ -65,6 +79,7 @@ public class Enemy_Bat : Enemy
 
             if (target != null)
             {
+                chaseTimer = chaseDuration;
                 destination = target.transform.position;
                 canDetectPlayer = false;
                 anim.SetBool("isMoving", true);
@@ -77,6 +92,13 @@ public class Enemy_Bat : Enemy
     protected override void HandleAnimator()
     {
         
+    }
+
+    public override void Die()
+    {
+        base.Die();
+
+        canMove = false;
     }
 
     protected override void OnDrawGizmos()
