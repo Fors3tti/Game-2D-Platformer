@@ -161,7 +161,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   enemyCheck: {fileID: 5480966326464134186}
-  enemyCheckRadius: 0.49
+  enemyCheckRadius: 0.35
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 128
