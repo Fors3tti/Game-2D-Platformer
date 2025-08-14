@@ -15,7 +15,7 @@ public class ObjectCreator : MonoBehaviour
         if (instance == null)
             instance = this;
         else
-            Destroy(instance);
+            Destroy(gameObject);
     }
 
     public void CreateObject(GameObject prefab, Transform target, bool shouldBeDestroyed = false, float delay = 0)
