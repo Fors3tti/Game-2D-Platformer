@@ -35978,7 +35978,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.1796614, y: 0.084307194}
+  m_Offset: {x: -0.016069889, y: -0.09167719}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -35988,7 +35988,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.7386048, y: 1.0518293}
+  m_Size: {x: 1.698947, y: 1.7408953}
   m_EdgeRadius: 0
 --- !u!1001 &3677142075249399976
 PrefabInstance:
@@ -36324,7 +36324,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0739615, y: 0.17282295}
+  m_Offset: {x: -0.026866913, y: -0.077521205}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -36334,7 +36334,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.0137372, y: 1.2288609}
+  m_Size: {x: 1.5725365, y: 1.6601465}
   m_EdgeRadius: 0
 --- !u!114 &7650203765381221126
 MonoBehaviour:
@@ -36356,13 +36356,13 @@ MonoBehaviour:
   wallCheckDistance: 0.5
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   groundCheck: {fileID: 8461264855497299706}
   playerDetectionDistance: 15
-  activeDuration: 0
+  activeDuration: 2
 --- !u!1001 &7900631507491708787
 PrefabInstance:
   m_ObjectHideFlags: 0
