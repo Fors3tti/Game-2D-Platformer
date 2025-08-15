@@ -36237,7 +36237,7 @@ GameObject:
   - component: {fileID: 1170656781428878770}
   - component: {fileID: 7650203765381221125}
   - component: {fileID: 5996751141492929510}
-  - component: {fileID: 6578128893345504965}
+  - component: {fileID: 7650203765381221126}
   m_Layer: 9
   m_Name: Enemy_Ghost
   m_TagString: Untagged
@@ -36272,35 +36272,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &6578128893345504965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5132683385447023346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0f932a2fe7c6714aa9b3922709ea593, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
-  idleDuration: 1.5
-  deathImpactSpeed: 5
-  deathRotationSpeed: 150
-  groundCheckDistance: 1
-  wallCheckDistance: 0.5
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 256
-  groundCheck: {fileID: 8461264855497299706}
-  playerDetectionDistance: 15
-  agroRadius: 20
-  chaseDuration: 1.25
-  attackSpeed: 12
 --- !u!1 &7412093257490137339
 GameObject:
   m_ObjectHideFlags: 0
@@ -36365,6 +36336,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.0137372, y: 1.2288609}
   m_EdgeRadius: 0
+--- !u!114 &7650203765381221126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5132683385447023346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aff1548555af8a43a75b86b50062898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  idleDuration: 1.5
+  deathImpactSpeed: 5
+  deathRotationSpeed: 150
+  groundCheckDistance: 1.15
+  wallCheckDistance: 0.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  groundCheck: {fileID: 8461264855497299706}
+  playerDetectionDistance: 15
+  activeDuration: 0
 --- !u!1001 &7900631507491708787
 PrefabInstance:
   m_ObjectHideFlags: 0
