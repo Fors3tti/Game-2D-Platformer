@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private SpriteRenderer sr => GetComponent<SpriteRenderer>();
-
+    protected SpriteRenderer sr => GetComponent<SpriteRenderer>();
     protected Animator anim;
     protected Rigidbody2D rb;
     protected Transform player;
@@ -80,10 +79,7 @@ public class Enemy : MonoBehaviour
             rb.isKinematic = false;
         }
 
-        foreach(var collider in colliders)
-        {
-            collider.enabled = false;
-        }
+        EnableColliders(false);
 
         anim.SetTrigger("hit");
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, deathImpactSpeed);
@@ -94,6 +90,14 @@ public class Enemy : MonoBehaviour
 
         PlayerManager.OnPlayerRespawn -= UpdatePlayersReference;
         Destroy(gameObject, 10);
+    }
+
+    protected void EnableColliders(bool enable)
+    {
+        foreach (var collider in colliders)
+        {
+            collider.enabled = enable;
+        }
     }
 
     private void HandleDeathRotation()
