@@ -36058,10 +36058,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Bat
       objectReference: {fileID: 0}
-    - target: {fileID: 2560816238823353202, guid: ab18481864e20054e8c4cf58a5183e24, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 6283784959536235247, guid: ab18481864e20054e8c4cf58a5183e24, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
