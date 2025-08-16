@@ -35763,42 +35763,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5091796205114510367, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
-      propertyPath: lengthInSec
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091796205114510367, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091796205114510367, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
-      propertyPath: CollisionModule.type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091796205114510367, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
-      propertyPath: CollisionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091796205114510367, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
-      propertyPath: VelocityModule.inWorldSpace
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091796205114510367, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
-      propertyPath: CollisionModule.collisionMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091796205114510367, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091796205114510367, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
-      propertyPath: CollisionModule.m_Bounce.scalar
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091796205114510367, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 5841204832803451972, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.5
@@ -36104,7 +36068,7 @@ Transform:
   m_GameObject: {fileID: 5132683385447023346}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 4, z: 0}
+  m_LocalPosition: {x: 14, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36244,7 +36208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &5996751141492929510
 Rigidbody2D:
   serializedVersion: 5
@@ -36363,6 +36327,9 @@ MonoBehaviour:
   groundCheck: {fileID: 8461264855497299706}
   playerDetectionDistance: 15
   activeDuration: 2
+  xMinDistance: 0
+  yMinDistance: 0
+  yMaxDistance: 0
 --- !u!1001 &7900631507491708787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36475,8 +36442,60 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7954184127605542683, guid: ef53f55b74832f442adccfd79a8d9df6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8059095829644446140}
   m_SourcePrefab: {fileID: 100100000, guid: ef53f55b74832f442adccfd79a8d9df6, type: 3}
+--- !u!1 &8059095829644446139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7954184127605542683, guid: ef53f55b74832f442adccfd79a8d9df6, type: 3}
+  m_PrefabInstance: {fileID: 8059095829644446138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8059095829644446140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059095829644446139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NotificationBehavior: 3
+  m_MaxPlayerCount: -1
+  m_AllowJoining: 1
+  m_JoinBehavior: 1
+  m_PlayerJoinedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_PlayerLeftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_JoinAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Join
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 951e0a33-5be6-4a09-8552-fd7bbcbd1810
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 8223524664705865738, guid: 974c379238b00c940bae39d512da70df, type: 3}
+  m_PlayerPrefab: {fileID: 2730767097154199136, guid: bd03d8602bce2c74bbc4b26046792072, type: 3}
+  m_SplitScreen: 0
+  m_MaintainAspectRatioInSplitScreen: 0
+  m_FixedNumberOfSplitScreens: -1
+  m_SplitScreenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!4 &8461264855497299706
 Transform:
   m_ObjectHideFlags: 0

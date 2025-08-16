@@ -7,7 +7,7 @@ public class UI_InGame : MonoBehaviour
 {
     [SerializeField] private GameObject firstSelected;
 
-    private PlayerInput playerInput;
+    private PlayerInputSet playerInput;
     private Player player;
     public static UI_InGame instance;
     public UI_FadeEffect fadeEffect { get; private set; }
@@ -23,7 +23,7 @@ public class UI_InGame : MonoBehaviour
         instance = this;
 
         fadeEffect = GetComponentInChildren<UI_FadeEffect>();
-        playerInput = new PlayerInput();
+        playerInput = new PlayerInputSet();
     }
 
     private void OnEnable()

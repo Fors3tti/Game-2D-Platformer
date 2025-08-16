@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private Animator anim;
     private CapsuleCollider2D cd;
 
-    public PlayerInput playerInput {  get; private set; }
+    public PlayerInputSet playerInput {  get; private set; }
     private Vector2 moveInput;
 
     private bool canBeControlled = false;
@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         cd = GetComponent<CapsuleCollider2D>();
 
-        playerInput = new PlayerInput();
+        playerInput = new PlayerInputSet();
     }
 
     private void OnEnable()
