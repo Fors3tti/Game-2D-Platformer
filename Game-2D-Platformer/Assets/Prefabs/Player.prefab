@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruitDrop: {fileID: 1563120324232634904, guid: e38e519cac7abd7429c846d3ea24248e, type: 3}
-  gameDifficulty: 2
+  gameDifficulty: 3
   moveSpeed: 14
   jumpForce: 16
   doubleJumpForce: 10
