@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     private Animator anim;
     private CapsuleCollider2D cd;
 
-    public InputActionAsset playerInput {  get; private set; }
+    public InputActionAsset playerInput { get; private set; }
     private Vector2 moveInput;
 
     private bool canBeControlled = false;
