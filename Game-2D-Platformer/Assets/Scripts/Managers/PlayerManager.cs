@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
-    public PlayerInputManager playerInputManager {  get; private set; }
+    public PlayerInputManager playerInputManager { get; private set; }
     public static event Action OnPlayerRespawn;
     public static PlayerManager instance;
 
