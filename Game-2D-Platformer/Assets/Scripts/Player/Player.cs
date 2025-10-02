@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -97,7 +96,6 @@ public class Player : MonoBehaviour
 
         UpdateGameDifficulty();
         RespawnFinished(false);
-        UpdateSkin();
     }
 
     private void Update()
@@ -156,14 +154,14 @@ public class Player : MonoBehaviour
             gameDifficulty = difficultyManager.difficulty;
     }
 
-    public void UpdateSkin()
+    public void UpdateSkin(int skinIndex)
     {
         SkinManager skinManager = SkinManager.instance;
 
         if (skinManager == null)
             return;
 
-        anim.runtimeAnimatorController = animators[skinManager.choosenSkinId];
+        GetComponentInChildren<Animator>().runtimeAnimatorController = animators[skinIndex];
     }
 
     private void HandleEnemyDetection()

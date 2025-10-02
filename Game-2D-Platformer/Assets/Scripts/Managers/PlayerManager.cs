@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private List<Player> playerList = new List<Player>();
     [SerializeField] private Transform respawnPoint;
     public Player player;
+    [SerializeField] private string[] playerDevice;
 
     private void Awake()
     {
@@ -39,23 +40,53 @@ public class PlayerManager : MonoBehaviour
         playerInputManager.onPlayerLeft -= RemovePlayer;
     }
 
-    private void AddPlayer(PlayerInput player)
+    private void AddPlayer(PlayerInput newPlayer)
     {
         if (this.player == null)
-            this.player = player.GetComponent<Player>();
+            this.player = newPlayer.GetComponent<Player>();
 
-        Player playerScript = player.GetComponent<Player>();
+        Player playerScript = newPlayer.GetComponent<Player>();
 
         playerList.Add(playerScript);
 
         OnPlayerRespawn?.Invoke();
-        PlaceNewPlayerAtRespawnPoint(player.transform);
+        PlaceNewPlayerAtRespawnPoint(newPlayer.transform);
+
+        int newPlayerNumber = GetPlayerNumber(newPlayer);
+        int newPlayerSkinId = SkinManager.instance.GetSkinId(newPlayerNumber);
+
+        playerScript.UpdateSkin(newPlayerSkinId);
     }
 
     private void RemovePlayer(PlayerInput player)
     {
         Player playerScript = player.GetComponent<Player>();
         playerList.Remove(playerScript);
+    }
+
+    private int GetPlayerNumber(PlayerInput newPlayer)
+    {
+        int newPlayerNumber = 0;
+
+        foreach (var device in newPlayer.devices)
+        {
+            for (int i = 0; i < playerDevice.Length; i++)
+            {
+                if (playerDevice[i] == "Empty")
+                {
+                    newPlayerNumber = i;
+                    playerDevice[i] = device.name;
+                    break;
+                }
+                else if (playerDevice[i] == device.name)
+                {
+                    newPlayerNumber = i;
+                    break;
+                }
+            }
+        }
+
+        return newPlayerNumber;
     }
 
     public void UpdateRespawnPosition(Transform newRespawnPoint) => respawnPoint = newRespawnPoint;

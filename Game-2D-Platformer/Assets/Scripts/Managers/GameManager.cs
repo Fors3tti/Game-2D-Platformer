@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour
             SkinManager skinManager = SkinManager.instance;
 
             if (skinManager != null)
-                PlayerPrefs.SetInt("LastUsedSkin", SkinManager.instance.GetSkinId());
+                PlayerPrefs.SetInt("LastUsedSkin", SkinManager.instance.GetSkinId(0));
         }
             
     }

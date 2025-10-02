@@ -93,7 +93,7 @@ public class UI_MainMenu : MonoBehaviour
         int levelToLoad = PlayerPrefs.GetInt("ContinueLevelNumber", 0);
         int lastSavedSkin = PlayerPrefs.GetInt("LastUsedSkin");
 
-        SkinManager.instance.SetSkinId(lastSavedSkin);
+        //SkinManager.instance.SetSkinId(lastSavedSkin);
 
         DifficultyManager.instance.LoadDifficulty(difficultyIndex);
         SceneManager.LoadScene("Level_" + levelToLoad);
