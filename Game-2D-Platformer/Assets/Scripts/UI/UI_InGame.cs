@@ -2,13 +2,14 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class UI_InGame : MonoBehaviour
 {
     [SerializeField] private GameObject firstSelected;
 
     private PlayerInputSet playerInput;
-    private Player player;
+    private List<Player> playerList;
     public static UI_InGame instance;
     public UI_FadeEffect fadeEffect { get; private set; }
 
@@ -60,7 +61,7 @@ public class UI_InGame : MonoBehaviour
 
     public void PauseButton()
     {
-        player = PlayerManager.instance.player;
+        playerList = PlayerManager.instance.GetPlayerList();
 
         if (isPaused)
             UnpauseTheGame();
@@ -68,21 +69,29 @@ public class UI_InGame : MonoBehaviour
             PauseTheGame();
     }
 
-    private void UnpauseTheGame()
-    {
-        player.playerInput.Enable();
-        isPaused = false;
-        Time.timeScale = 1;
-        pauseUI.SetActive(false);
-    }
-
     private void PauseTheGame()
     {
+        foreach (var player in playerList)
+        {
+            player.playerInput.Disable();
+        }
+
         EventSystem.current.SetSelectedGameObject(firstSelected);
-        player.playerInput.Disable();
         isPaused = true;
         Time.timeScale = 0;
         pauseUI.SetActive(true);
+    }
+
+    private void UnpauseTheGame()
+    {
+        foreach (var player in playerList)
+        {
+            player.playerInput.Enable();
+        }
+
+        isPaused = false;
+        Time.timeScale = 1;
+        pauseUI.SetActive(false);
     }
 
     public void GoToMainMenuButton()

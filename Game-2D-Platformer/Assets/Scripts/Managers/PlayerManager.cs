@@ -15,7 +15,6 @@ public class PlayerManager : MonoBehaviour
     [Header("Player")]
     [SerializeField] private List<Player> playerList = new List<Player>();
     [SerializeField] private Transform respawnPoint;
-    public Player player;
     [SerializeField] private string[] playerDevice;
 
     private void Awake()
@@ -23,7 +22,7 @@ public class PlayerManager : MonoBehaviour
         if (instance == null)
             instance = this;
         else
-            Destroy(gameObject);
+            Destroy(this.gameObject);
 
         playerInputManager = GetComponent<PlayerInputManager>();
         playerInputManager.SetMaximumPlayerCount(maxPlayerCount);
@@ -41,11 +40,15 @@ public class PlayerManager : MonoBehaviour
         playerInputManager.onPlayerLeft -= RemovePlayer;
     }
 
+    public void EnableJoinAndUpdateLifePoints()
+    {
+        playerInputManager.EnableJoining();
+        lifePoints = maxPlayerCount;
+        UI_InGame.instance.UpdateLifePointsUI(lifePoints, maxPlayerCount);
+    }
+
     private void AddPlayer(PlayerInput newPlayer)
     {
-        if (this.player == null)
-            this.player = newPlayer.GetComponent<Player>();
-
         Player playerScript = newPlayer.GetComponent<Player>();
 
         playerList.Add(playerScript);
@@ -99,6 +102,8 @@ public class PlayerManager : MonoBehaviour
 
         return newPlayerNumber;
     }
+
+    public List<Player> GetPlayerList() => playerList;
 
     public void UpdateRespawnPosition(Transform newRespawnPoint) => respawnPoint = newRespawnPoint;
 

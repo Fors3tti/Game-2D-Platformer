@@ -57,8 +57,8 @@ public class Enemy : MonoBehaviour
 
     private void UpdatePlayersReference()
     {
-        if(player == null)
-            player = PlayerManager.instance.player.transform;
+        //if(player == null)
+        //    player = PlayerManager.instance.player.transform;
     }
 
     protected virtual void Update()
