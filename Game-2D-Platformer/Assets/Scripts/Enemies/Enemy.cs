@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     protected SpriteRenderer sr => GetComponent<SpriteRenderer>();
     protected Animator anim;
     protected Rigidbody2D rb;
-    protected Transform player;
+    protected List<Player> playerList;
     protected Collider2D[] colliders;
 
     [Header("General Infos")]
@@ -53,12 +53,12 @@ public class Enemy : MonoBehaviour
         }
 
         PlayerManager.OnPlayerRespawn += UpdatePlayersReference;
+        PlayerManager.OnPlayerDeath += UpdatePlayersReference;
     }
 
     private void UpdatePlayersReference()
     {
-        //if(player == null)
-        //    player = PlayerManager.instance.player.transform;
+        playerList = PlayerManager.instance.GetPlayerList();
     }
 
     protected virtual void Update()
@@ -74,11 +74,6 @@ public class Enemy : MonoBehaviour
 
     public virtual void Die()
     {
-        if (rb.isKinematic)
-        {
-            rb.isKinematic = false;
-        }
-
         EnableColliders(false);
 
         anim.SetTrigger("hit");
@@ -89,6 +84,7 @@ public class Enemy : MonoBehaviour
             deathRotationDirection = deathRotationDirection * -1;
 
         PlayerManager.OnPlayerRespawn -= UpdatePlayersReference;
+        PlayerManager.OnPlayerDeath -= UpdatePlayersReference;
         Destroy(gameObject, 10);
     }
 

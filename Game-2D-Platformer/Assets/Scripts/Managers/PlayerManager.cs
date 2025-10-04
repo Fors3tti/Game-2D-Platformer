@@ -6,8 +6,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
-    public PlayerInputManager playerInputManager { get; private set; }
     public static event Action OnPlayerRespawn;
+    public static event Action OnPlayerDeath;
+
+    public PlayerInputManager playerInputManager { get; private set; }
     public static PlayerManager instance;
 
     public int lifePoints;
@@ -76,6 +78,8 @@ public class PlayerManager : MonoBehaviour
         }
 
         UI_InGame.instance.UpdateLifePointsUI(lifePoints, maxPlayerCount);
+
+        OnPlayerDeath?.Invoke();
     }
 
     private int GetPlayerNumber(PlayerInput newPlayer)
