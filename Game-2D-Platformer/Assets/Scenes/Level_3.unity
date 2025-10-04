@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0/0
+  m_text: 2/2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cdfb6ba200b62ed46819694d70a4437e, type: 2}
   m_sharedMaterial: {fileID: -91572077461226718, guid: cdfb6ba200b62ed46819694d70a4437e, type: 2}
@@ -401,7 +401,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 49.4, y: 13.3}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &186411806
 MonoBehaviour:
@@ -36366,6 +36366,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4980599200054996012, guid: a32077367de8f1441ad94c1cec4cb56d, type: 3}
+      propertyPath: lifePointsText
+      value: 
+      objectReference: {fileID: 55027211}
     - target: {fileID: 7594944453277848420, guid: a32077367de8f1441ad94c1cec4cb56d, type: 3}
       propertyPath: m_Name
       value: UI_InGame
@@ -36727,6 +36731,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1747053418398290328, guid: ef53f55b74832f442adccfd79a8d9df6, type: 3}
+      propertyPath: lifePoints
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1747053418398290328, guid: ef53f55b74832f442adccfd79a8d9df6, type: 3}
       propertyPath: maxPlayerCount
       value: 2

@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
     public static event Action OnPlayerRespawn;
     public static PlayerManager instance;
 
+    public int lifePoints;
     public int maxPlayerCount = 1;
     [Header("Player")]
     [SerializeField] private List<Player> playerList = new List<Player>();
@@ -62,6 +63,16 @@ public class PlayerManager : MonoBehaviour
     {
         Player playerScript = player.GetComponent<Player>();
         playerList.Remove(playerScript);
+
+        lifePoints--;
+
+        if (lifePoints <= 0)
+        {
+            playerInputManager.DisableJoining();
+            GameManager.instance.RestartLevel();
+        }
+
+        UI_InGame.instance.UpdateLifePointsUI(lifePoints, maxPlayerCount);
     }
 
     private int GetPlayerNumber(PlayerInput newPlayer)

@@ -14,6 +14,7 @@ public class UI_InGame : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI fruitText;
+    [SerializeField] private TextMeshProUGUI lifePointsText;
 
     [SerializeField] private GameObject pauseUI;
     private bool isPaused;
@@ -97,5 +98,10 @@ public class UI_InGame : MonoBehaviour
     public void UpdateTimerUI(float timer)
     {
         timerText.text = timer.ToString("00") + " s";
+    }
+
+    public void UpdateLifePointsUI(int lifePoints, int maxLifePoints)
+    {
+        lifePointsText.text = lifePoints + "/" + maxLifePoints;
     }
 }
