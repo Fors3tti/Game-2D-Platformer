@@ -69,7 +69,8 @@ public class PlayerManager : MonoBehaviour
         Player playerScript = player.GetComponent<Player>();
         playerList.Remove(playerScript);
 
-        lifePoints--;
+        if (CanRemoveLifePoints())
+            lifePoints--;
 
         if (lifePoints <= 0)
         {
@@ -80,6 +81,21 @@ public class PlayerManager : MonoBehaviour
         UI_InGame.instance.UpdateLifePointsUI(lifePoints, maxPlayerCount);
 
         OnPlayerDeath?.Invoke();
+    }
+
+    private bool CanRemoveLifePoints()
+    {
+        if (DifficultyManager.instance.difficulty == DifficultyType.Hard)
+        {
+            return true;
+        }
+
+        if (GameManager.instance.fruitsCollected <= 0 && DifficultyManager.instance.difficulty == DifficultyType.Normal)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private int GetPlayerNumber(PlayerInput newPlayer)

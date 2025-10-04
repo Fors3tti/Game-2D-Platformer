@@ -110,7 +110,6 @@ public class Player : MonoBehaviour
             if (gameManager.FruitsCollected() <= 0)
             {
                 Die();
-                //gameManager.RestartLevel();
             }
             else
             {
@@ -124,7 +123,6 @@ public class Player : MonoBehaviour
         if (gameDifficulty == DifficultyType.Hard)
         {
             Die();
-            //gameManager.RestartLevel();
         }
     }
 
