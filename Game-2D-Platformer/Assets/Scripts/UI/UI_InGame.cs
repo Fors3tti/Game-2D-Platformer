@@ -111,6 +111,12 @@ public class UI_InGame : MonoBehaviour
 
     public void UpdateLifePointsUI(int lifePoints, int maxLifePoints)
     {
+        if (DifficultyManager.instance.difficulty == DifficultyType.Easy)
+        {
+            lifePointsText.transform.parent.gameObject.SetActive(false);
+            return;
+        }
+
         lifePointsText.text = lifePoints + "/" + maxLifePoints;
     }
 }

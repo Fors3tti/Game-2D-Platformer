@@ -45,10 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6e142b81f410d41ba7c181e84f946e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayerCount: 1
+  lifePoints: 2
+  maxPlayerCount: 2
   playerList: []
   respawnPoint: {fileID: 0}
-  player: {fileID: 0}
+  playerDevice:
+  - Empty
+  - Empty
+  - Empty
+  - Empty
 --- !u!114 &3657679204962927391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 3
-  m_MaxPlayerCount: 1
+  m_MaxPlayerCount: 4
   m_AllowJoining: 1
   m_JoinBehavior: 1
   m_PlayerJoinedEvent:
