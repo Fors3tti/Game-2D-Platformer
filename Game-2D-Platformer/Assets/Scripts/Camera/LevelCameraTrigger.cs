@@ -15,8 +15,8 @@ public class LevelCameraTrigger : MonoBehaviour
 
         if (player != null)
         {
-            levelCamera.EnableCamera(true);
-            levelCamera.SetNewTarget(player.transform);
+            //levelCamera.EnableCamera(true);
+            //levelCamera.SetNewTarget(player.transform);
         }
     }
 
@@ -26,7 +26,7 @@ public class LevelCameraTrigger : MonoBehaviour
 
         if (player != null)
         {
-            levelCamera.EnableCamera(false);
+            //levelCamera.EnableCamera(false);
         }
     }
 }

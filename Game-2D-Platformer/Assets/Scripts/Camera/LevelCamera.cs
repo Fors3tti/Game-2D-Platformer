@@ -8,7 +8,7 @@ public class LevelCamera : MonoBehaviour
     private void Awake()
     {
         cinemachine = GetComponentInChildren<CinemachineCamera>(true);
-        EnableCamera(false);
+        //EnableCamera(false);
     }
 
     public void EnableCamera(bool enable)
