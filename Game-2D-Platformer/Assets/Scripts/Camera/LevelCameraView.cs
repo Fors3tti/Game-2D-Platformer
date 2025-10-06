@@ -2,15 +2,41 @@ using UnityEngine;
 
 public class LevelCameraView : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private LevelCamera levelCamera;
+    private int playersInView;
+
+    private void Awake()
     {
-        
+        levelCamera = GetComponentInParent<LevelCamera>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Player player = collision.gameObject.GetComponent<Player>();
+
+        if (player != null)
+        {
+            playersInView++;
+
+            if (playersInView >= PlayerManager.instance.GetPlayerList().Count)
+            {
+                // decrease size of lens
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Player player = collision.gameObject.GetComponent<Player>();
+
+        if (player != null)
+        {
+            playersInView--;
+
+            if (playersInView < PlayerManager.instance.GetPlayerList().Count)
+            {
+                // increase size of lens
+            }
+        }
     }
 }

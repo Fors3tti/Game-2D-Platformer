@@ -35882,6 +35882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efdc4008dd24ee24a86a30ca37969c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetLensSize: 0
 --- !u!4 &2106478645439303899
 Transform:
   m_ObjectHideFlags: 0
@@ -36208,6 +36209,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1524929743485967115, guid: 2beba91313c557e4ebc5504981712a84, type: 3}
+      propertyPath: targetLensSize
+      value: 12.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7190080399597092983, guid: 2beba91313c557e4ebc5504981712a84, type: 3}
       propertyPath: Lens.OrthographicSize
       value: 12.5
