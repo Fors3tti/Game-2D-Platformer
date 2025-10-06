@@ -18,9 +18,9 @@ public class LevelCameraView : MonoBehaviour
         {
             playersInView++;
 
-            if (playersInView >= PlayerManager.instance.GetPlayerList().Count)
+            if (playersInView >= levelCamera.playerList.Count)
             {
-                // decrease size of lens
+                levelCamera.ChangeCameraLensSize(levelCamera.minCameraSize);
             }
         }
     }
@@ -33,9 +33,9 @@ public class LevelCameraView : MonoBehaviour
         {
             playersInView--;
 
-            if (playersInView < PlayerManager.instance.GetPlayerList().Count)
+            if (playersInView < levelCamera.playerList.Count)
             {
-                // increase size of lens
+                levelCamera.ChangeCameraLensSize(levelCamera.maxCameraSize);
             }
         }
     }
