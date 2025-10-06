@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour
 
     public int lifePoints;
     public int maxPlayerCount = 1;
+    public int playerCountWinCondition;
     [Header("Player")]
     [SerializeField] private List<Player> playerList = new List<Player>();
     [SerializeField] private Transform respawnPoint;
@@ -45,6 +46,7 @@ public class PlayerManager : MonoBehaviour
     public void EnableJoinAndUpdateLifePoints()
     {
         playerInputManager.EnableJoining();
+        playerCountWinCondition = maxPlayerCount;
         lifePoints = maxPlayerCount;
         UI_InGame.instance.UpdateLifePointsUI(lifePoints, maxPlayerCount);
     }
@@ -69,13 +71,16 @@ public class PlayerManager : MonoBehaviour
         Player playerScript = player.GetComponent<Player>();
         playerList.Remove(playerScript);
 
-        if (CanRemoveLifePoints())
+        if (CanRemoveLifePoints() && lifePoints > 0)
             lifePoints--;
 
         if (lifePoints <= 0)
         {
+            playerCountWinCondition--;
             playerInputManager.DisableJoining();
-            GameManager.instance.RestartLevel();
+
+            if (playerList.Count <= 0)
+                GameManager.instance.RestartLevel();
         }
 
         UI_InGame.instance.UpdateLifePointsUI(lifePoints, maxPlayerCount);
