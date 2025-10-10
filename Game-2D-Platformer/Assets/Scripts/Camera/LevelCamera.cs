@@ -7,11 +7,13 @@ public class LevelCamera : MonoBehaviour
     public List<Player> playerList {  get; private set; }
     private CinemachineCamera cinemachine;
 
+    [SerializeField] private Collider2D[] limits;
     [SerializeField] private Transform cameraCenterPoint;
     public float minCameraSize;
     public float maxCameraSize;
     private float targetLensSize;
 
+    private bool cameraActive;
     private bool cameraFocusedOnCenter;
     private Transform player1;
     private Transform player2;
@@ -27,11 +29,17 @@ public class LevelCamera : MonoBehaviour
 
     private void Update()
     {
+        if (cameraActive == false)
+            return;
+
         UpdateLensSizeIfNeeded();
     }
 
     private void UpdateCameraStatus()
     {
+        if (cameraActive == false) 
+            return;
+
         playerList = PlayerManager.instance.GetPlayerList();
 
         if (playerList.Count > 1)
@@ -51,6 +59,9 @@ public class LevelCamera : MonoBehaviour
 
     public void UpdateCenterPointPosition()
     {
+        if (cameraActive == false) 
+            return;
+
         if (cameraFocusedOnCenter == false)
             return;
 
@@ -78,7 +89,16 @@ public class LevelCamera : MonoBehaviour
 
     public void EnableCamera(bool enable)
     {
+        cameraActive = enable;
         cinemachine.gameObject.SetActive(enable);
+    }
+
+    public void EnableLimits(bool enable)
+    {
+        foreach (var collider in limits)
+        {
+            collider.enabled = enable;
+        }
     }
 
     public void SetNewTarget(Transform newTarget)
