@@ -27706,7 +27706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6780828411346210499, guid: 2beba91313c557e4ebc5504981712a84, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.8
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 7190080399597092983, guid: 2beba91313c557e4ebc5504981712a84, type: 3}
       propertyPath: Priority.Enabled
@@ -37553,10 +37553,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5694548693738527344, guid: 2beba91313c557e4ebc5504981712a84, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7841732852045721104, guid: 2beba91313c557e4ebc5504981712a84, type: 3}
       propertyPath: m_Name
       value: LevelCamera
