@@ -22,7 +22,9 @@ public class LevelCamera : MonoBehaviour
     {
         cinemachine = GetComponentInChildren<CinemachineCamera>(true);
         targetLensSize = cinemachine.Lens.OrthographicSize;
+        playerList = new List<Player>();
 
+        EnableLimits(false);
         InvokeRepeating(nameof(UpdateCenterPointPosition), 0, .1f);
         //EnableCamera(false);
     }
@@ -37,9 +39,6 @@ public class LevelCamera : MonoBehaviour
 
     private void UpdateCameraStatus()
     {
-        if (cameraActive == false) 
-            return;
-
         playerList = PlayerManager.instance.GetPlayerList();
 
         if (playerList.Count > 1)

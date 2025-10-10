@@ -27766,7 +27766,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2501288339263992981, guid: 2beba91313c557e4ebc5504981712a84, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3185003253059134383, guid: 2beba91313c557e4ebc5504981712a84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27799,6 +27799,10 @@ PrefabInstance:
     - target: {fileID: 7841732852045721104, guid: 2beba91313c557e4ebc5504981712a84, type: 3}
       propertyPath: m_Name
       value: LevelCamera (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841732852045721104, guid: 2beba91313c557e4ebc5504981712a84, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7955474396605399068, guid: 2beba91313c557e4ebc5504981712a84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36442,6 +36446,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3168147960812757532, guid: 1a49b9d37c1abe049955ff5976f09860, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.007175
+      objectReference: {fileID: 0}
     - target: {fileID: 7331433778813999597, guid: 1a49b9d37c1abe049955ff5976f09860, type: 3}
       propertyPath: m_Name
       value: CameraManager
